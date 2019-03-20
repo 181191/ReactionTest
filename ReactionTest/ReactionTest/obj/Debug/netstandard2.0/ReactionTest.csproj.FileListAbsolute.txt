@@ -1,0 +1,12 @@
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.deps.json
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.dll
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.pdb
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.csproj.CoreCompileInputs.cache
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.AssemblyInfoInputs.cache
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.AssemblyInfo.cs
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.dll
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.pdb
+C:\Users\eirik\source\repos\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.csprojAssemblyReference.cache
