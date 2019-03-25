@@ -6,7 +6,16 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Button Text= 'buttonString'/>
+        <Label x:Name="infoString"
+               FontSize="30"
+               VerticalOptions="LayoutOptions.End"
+               HorizontalOptions="Center"
+               Margin="0, 50, 0, 0"/>
+        <Button Text= 'Click to start'
+                Padding ="60, 100, 60, 100"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked= "OnButtonClicked" />
     </StackLayout>
 
 </ContentPage>
