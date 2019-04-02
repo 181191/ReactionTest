@@ -10,7 +10,16 @@ namespace ReactionTest
 {
     public partial class MainPage : ContentPage
     {
-        private bool buttonActive; 
+        private bool buttonActive;
+        private bool testStarted;
+
+        private double timeSinceActice; 
+
+        private int anticipationMiss; 
+        private int minorLaps;
+        private int majorLaps;
+        private int miss;
+        private int hit; 
 
         public MainPage()
         {
@@ -21,22 +30,24 @@ namespace ReactionTest
 
         async void OnButtonClicked(object sender, EventArgs args)
         {
-            if(isActive())
+            if (!testStarted)
             {
-                infoString.Text = "Miss";
+                initTest(); 
             }
             else
             {
-                infoString.Text = "Hit"; 
-                
+                testClick(); 
             }
 
 
         }
 
-        private bool isActive()
+        private void testClick()
         {
-            return false; 
+            if (timeSinceActice < )
+            {
+
+            }
         }
     }
 }
