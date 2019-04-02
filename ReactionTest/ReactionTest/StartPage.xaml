@@ -5,8 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="PVT reaction messurement!"
-                   Scale="1.5"
-                   VerticalOptions="CenterAndExpand"/>
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+                   
             <Label Text="Choose length of The test:"
                    Scale="1.5"
                 VerticalOptions="CenterAndExpand" 

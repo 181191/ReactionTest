@@ -34,6 +34,13 @@ namespace ReactionTest
 
 
         }
+        public MainPage(int minutes)
+        {
+            InitializeComponent();
+            if(minutes > 0)
+                testTimeSec = testTimeSec * minutes;
+
+        }
 
         async void OnButtonClicked(object sender, EventArgs args)
         {
