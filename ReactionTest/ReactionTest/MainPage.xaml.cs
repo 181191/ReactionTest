@@ -10,6 +10,7 @@ namespace ReactionTest
 {
     public partial class MainPage : ContentPage
     {
+        private int testTime;
         private bool buttonActive;
         private bool testStarted;
 
@@ -27,12 +28,17 @@ namespace ReactionTest
 
             
         }
+        public MainPage(int testTime)
+        {
+            InitializeComponent();
+            this.testTime = testTime;
+        }
 
-        async void OnButtonClicked(object sender, EventArgs args)
+        void OnButtonClicked(object sender, EventArgs args)
         {
             if (!testStarted)
             {
-                initTest(); 
+             //   initTest(); 
             }
             else
             {
@@ -44,10 +50,7 @@ namespace ReactionTest
 
         private void testClick()
         {
-            if (timeSinceActice < )
-            {
-
-            }
+    
         }
     }
 }

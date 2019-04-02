@@ -11,7 +11,7 @@ namespace ReactionTest
         {
             InitializeComponent();
             LocalHtml lokal = new LocalHtml();
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()
