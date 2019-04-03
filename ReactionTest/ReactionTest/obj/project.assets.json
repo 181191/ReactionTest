@@ -343,23 +343,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eirik\\.nuget\\packages\\": {},
+    "C:\\Users\\ommid\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eirik\\source\\repos\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
+      "projectUniqueName": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
       "projectName": "ReactionTest",
-      "projectPath": "C:\\Users\\eirik\\source\\repos\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
-      "packagesPath": "C:\\Users\\eirik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eirik\\source\\repos\\ReactionTest\\ReactionTest\\ReactionTest\\obj\\",
+      "projectPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
+      "packagesPath": "C:\\Users\\ommid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\eirik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ommid\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
