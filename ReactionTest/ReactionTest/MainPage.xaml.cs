@@ -38,7 +38,7 @@ namespace ReactionTest
         {
             InitializeComponent();
             if(minutes > 0)
-                testTimeSec = testTimeSec * minutes;
+                testTimeSec *=  minutes;
 
         }
 
@@ -60,6 +60,7 @@ namespace ReactionTest
         {
             pressed = DateTime.Now;
             timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
+            Console.WriteLine(timeSinceActive);
             if (timeSinceActive <= 100)
             {
                 infoString.Text = "Too early";
@@ -119,7 +120,7 @@ namespace ReactionTest
             Random generator = new Random();
             for (int i = 0; i < testTimeSec / 10; i++)
             {
-                list.Add(10 * generator.Next(1, 10)); 
+                list.Add(generator.Next(1, 10)); 
             }
 
             return list; 

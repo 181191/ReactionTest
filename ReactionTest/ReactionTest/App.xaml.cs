@@ -10,7 +10,6 @@ namespace ReactionTest
         public App()
         {
             InitializeComponent();
-            LocalHtml lokal = new LocalHtml();
             MainPage = new NavigationPage(new StartPage());
         }
 
