@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReactionTest.StartPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="PVT reaction messurement!"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+                   
+            <Label Text="Choose length of The test:"
+                   Scale="1.5"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="3 minute test" 
+                    
+                    
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="ThreeMinuteTestClicked"/>
+            <Button Text="7 minute test" 
+                    
+                     
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="SevenMinuteTestClicked"/>
+            <Button Text="10 minute test" 
+                    
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="TenMinuteTestClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
