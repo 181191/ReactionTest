@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mime;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -14,6 +17,20 @@ namespace ReactionTest
 {
     public partial class MainPage : ContentPage
     {
+
+
+        public void onChangeValue(string NewText)
+        {
+            this.Resources["changeString"] = NewText; 
+        }
+
+        public void onChangeButton(string NewText)
+        {
+            this.Resources["changeButton"] = NewText; 
+        }
+    
+
+
         private bool buttonActive;
         private bool testStarted;
         private int testTimeSec = 60;
@@ -32,19 +49,22 @@ namespace ReactionTest
         private int majorLaps;
         private int miss;
         private int hit;
-
+       
         private DateTime created;
-        private DateTime pressed; 
-
+        private DateTime pressed;
+       
         public MainPage()
         {
 
         }
         public MainPage(int minutes)
         {
+           
             minutes = this.minutes; 
             InitializeComponent();
-            if(minutes > 0)
+            onChangeValue("Lets play");
+            onChangeButton("Press To Start");
+            if (minutes > 0)
                 testTimeSec *=  minutes;
 
         }
@@ -55,10 +75,13 @@ namespace ReactionTest
 
             if (!testStarted)
             {
+                onChangeValue("Waitin.");
+                onChangeButton("Wait For it");
                 InitTest();
             }
             else
-            { 
+            {
+                onChangeValue("PLIIIS");
                 TestClick();
             }
         }
@@ -70,27 +93,28 @@ namespace ReactionTest
 
             if (timeSinceActive <= 100)
             {
-                infoString.Text = "Too early";
+                onChangeValue("Too early");
                 anticipationMiss++; 
             }
             else if (timeSinceActive <= 500)
             {
-                hit++; 
-                infoString.Text = "Hit"; 
+                hit++;
+                onChangeValue("Hit");
+                
             }
             else if(timeSinceActive <= 1000)
             {
-                infoString.Text = "Hit"; 
+                onChangeValue("Hit");
                 minorLaps++; 
             }
             else if (timeSinceActive <= 3000)
             {
-                infoString.Text = "Hit";
+                onChangeValue("Hit");
                 majorLaps++; 
             }
             else
             {
-                infoString.Text = "Miss";
+                onChangeValue("Miss");
                 miss++; 
             }
 
@@ -115,14 +139,16 @@ namespace ReactionTest
             {
                 testTimer.Stop(); 
             }
-            if (duration == randoms[testNumber] && duration <= testTimeSec)
+            if (duration == randoms[testNumber])
             {
-                infoString.Text = "Press Now";
+                onChangeValue("Press Now");
+
                 created = DateTime.Now;
             }
-            else if (duration == randoms[testNumber] + 7)
+            else if (duration == randoms[testNumber] + 6)
             {
-                infoString.Text = " ";
+                onChangeValue("  ");
+                testNumber++; 
             }
 
         }
@@ -138,6 +164,8 @@ namespace ReactionTest
 
             return list; 
         }
+        
     }
+
 }
 
