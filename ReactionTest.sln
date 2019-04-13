@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactionTest.Android", "Rea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactionTest.iOS", "ReactionTest\ReactionTest.iOS\ReactionTest.iOS.csproj", "{4320201B-A4AC-4760-8091-34D4DAB476D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactionTest", "ReactionTest\ReactionTest\ReactionTest.csproj", "{87D3D04B-5B6A-460F-939D-B03D9760FB58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactionTest", "ReactionTest\ReactionTest\ReactionTest.csproj", "{87D3D04B-5B6A-460F-939D-B03D9760FB58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

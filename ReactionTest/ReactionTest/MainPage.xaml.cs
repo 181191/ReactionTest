@@ -37,7 +37,8 @@ namespace ReactionTest
         int duration = 0;
         int testNumber = 0;
         private List<int> randoms;
-        private int minutes; 
+        private int minutes;
+        private string userID;
 
 
         Timer testTimer = new Timer();
@@ -57,7 +58,7 @@ namespace ReactionTest
         {
 
         }
-        public MainPage(int minutes)
+        public MainPage(int minutes, string userID)
         {
            
             minutes = this.minutes; 
@@ -66,6 +67,7 @@ namespace ReactionTest
             onChangeButton("Press To Start");
             if (minutes > 0)
                 testTimeSec *=  minutes;
+            this.userID = userID;
 
         }
 
