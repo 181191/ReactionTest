@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Mime;
 using System.Runtime.CompilerServices;
@@ -21,15 +22,31 @@ namespace ReactionTest
 
         public void onChangeValue(string NewText)
         {
-            this.Resources["changeString"] = NewText; 
+            Task.Run(() =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    this.Resources["changeString"] = NewText;
+
+
+                });
+            });
         }
 
         public void onChangeButton(string NewText)
         {
-            this.Resources["changeButton"] = NewText; 
-        }
-    
+            Task.Run(() =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
 
+                    this.Resources["changeButton"] = NewText;
+
+
+                });
+            });
+        }
 
         private bool buttonActive;
         private bool testStarted;
@@ -53,7 +70,9 @@ namespace ReactionTest
        
         private DateTime created;
         private DateTime pressed;
-       
+
+
+
         public MainPage()
         {
 
@@ -71,7 +90,7 @@ namespace ReactionTest
 
         }
 
-        async void OnButtonClicked(object sender, EventArgs args)
+        void OnButtonClicked(object sender, EventArgs args)
         {
             pressed = DateTime.Now;
 
@@ -85,6 +104,7 @@ namespace ReactionTest
             {
                 onChangeValue("PLIIIS");
                 TestClick();
+
             }
         }
 
@@ -94,8 +114,10 @@ namespace ReactionTest
             Console.WriteLine(timeSinceActive + " ");
 
             if (timeSinceActive <= 100)
-            {
+            { 
                 onChangeValue("Too early");
+
+
                 anticipationMiss++; 
             }
             else if (timeSinceActive <= 500)
@@ -124,14 +146,16 @@ namespace ReactionTest
 
         public void InitTest()
         {
-            testStarted = true; 
+            testStarted = true;
 
             randoms = RandomizeIntervals();
 
             testTimer.Interval = 1000;
             testTimer.Start();
-            testTimer.Elapsed += TimerElapsedEvent; 
+            testTimer.Elapsed += TimerElapsedEvent;
         }
+
+
 
         public void TimerElapsedEvent(Object sender, ElapsedEventArgs a)
         {
