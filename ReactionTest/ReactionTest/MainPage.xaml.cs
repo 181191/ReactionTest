@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mime;
 using System.Security.Cryptography;
@@ -14,19 +15,24 @@ namespace ReactionTest
 {
     public partial class MainPage : ContentPage
     {
+
         private bool buttonActive;
         private bool testStarted;
         private int testTimeSec = 60;
         int duration = 0;
         int testNumber = 0;
         private List<int> randoms;
-        private int minutes; 
+        private int minutes;
+        public string s { get { return s; } set {
+                s = value;
+                Even
+            } }
+        public Color bColor { get; set;/* { bColor = value; PropertyChanged(this, new PropertyChangedEventArgs("bColor")); } */} = Color.Red;
 
-
+        private string testID;
         Timer testTimer = new Timer();
 
         private double timeSinceActive;
-
         private int anticipationMiss;
         private int minorLaps;
         private int majorLaps;
@@ -40,34 +46,33 @@ namespace ReactionTest
         {
 
         }
-        public MainPage(int minutes)
+        public MainPage(int minutes, string testID)
         {
-            minutes = this.minutes; 
+            this.testID = testID;
             InitializeComponent();
+            BindingContext = this;
+
             if(minutes > 0)
                 testTimeSec *=  minutes;
-
+            
         }
 
-        async void OnButtonClicked(object sender, EventArgs args)
+        void OnButtonClicked(object sender, EventArgs args)
         {
             pressed = DateTime.Now;
 
-            if (!testStarted)
-            {
-                InitTest();
-            }
-            else
-            { 
+            if (testStarted)
                 TestClick();
-            }
+            else
+                InitTest();
+
+            
         }
 
         private void TestClick()
         {
             timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
-            Console.WriteLine(timeSinceActive + " ");
-
+            Console.WriteLine("----------------  "+ timeSinceActive + " -------------");
             if (timeSinceActive <= 100)
             {
                 infoString.Text = "Too early";
@@ -75,7 +80,7 @@ namespace ReactionTest
             }
             else if (timeSinceActive <= 500)
             {
-                hit++; 
+                hit++;
                 infoString.Text = "Hit"; 
             }
             else if(timeSinceActive <= 1000)
@@ -98,8 +103,9 @@ namespace ReactionTest
 
         public void InitTest()
         {
-            testStarted = true; 
-
+            testStarted = true;
+            rButton.BackgroundColor = Color.Red;
+            infoString.Text = "Started";
             randoms = RandomizeIntervals();
 
             testTimer.Interval = 1000;
@@ -110,14 +116,15 @@ namespace ReactionTest
         public void TimerElapsedEvent(Object sender, ElapsedEventArgs a)
         {
             duration++;
-            Console.WriteLine(duration);
             if (duration >= testTimeSec)
             {
                 testTimer.Stop(); 
             }
             if (duration == randoms[testNumber] && duration <= testTimeSec)
             {
-                infoString.Text = "Press Now";
+                infoString.Text = "Press";
+                rButton.BackgroundColor = Color.Green;
+
                 created = DateTime.Now;
             }
             else if (duration == randoms[testNumber] + 7)

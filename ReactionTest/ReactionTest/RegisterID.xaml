@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReactionTest.RegisterID">
+    <ContentPage.Content>
+        <StackLayout Padding="5,10">
+            <Label Text="Subject ID: "
+                Scale="2.0"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Editor 
+                x:Name="ID"
+                VerticalOptions="CenterAndExpand" 
+                MaxLength="4"
+                Placeholder="Enter ID here"
+                PlaceholderColor="Gray"
+                AutoSize="TextChanges"
+                IsTextPredictionEnabled="false"
+                />
+            <Button 
+                Text="Next"
+                Pressed="RegisterTestID"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -20,18 +20,18 @@ namespace ReactionTest
         private void ThreeMinuteTestClicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new MainPage(3));
+            Navigation.PushAsync(new RegisterID(3));
 
         }
 
         private void SevenMinuteTestClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage(7));
+            Navigation.PushAsync(new RegisterID(7));
         }
 
         private void TenMinuteTestClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage(10));
+            Navigation.PushAsync(new RegisterID(10));
         }
     }
 }
