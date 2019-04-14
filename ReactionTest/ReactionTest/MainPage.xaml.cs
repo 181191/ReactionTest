@@ -20,33 +20,7 @@ namespace ReactionTest
     {
 
 
-        public void onChangeValue(string NewText)
-        {
-            Task.Run(() =>
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
 
-                    this.Resources["changeString"] = NewText;
-
-
-                });
-            });
-        }
-
-        public void onChangeButton(string NewText)
-        {
-            Task.Run(() =>
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-
-                    this.Resources["changeButton"] = NewText;
-
-
-                });
-            });
-        }
 
         private bool buttonActive;
         private bool testStarted;
@@ -75,17 +49,18 @@ namespace ReactionTest
 
         public MainPage()
         {
-
         }
         public MainPage(int minutes, string userID)
         {
            
-            minutes = this.minutes; 
+            this.minutes = minutes; 
             InitializeComponent();
             onChangeValue("Lets play");
             onChangeButton("Press To Start");
+
             if (minutes > 0)
                 testTimeSec *=  minutes;
+
             this.userID = userID;
 
         }
@@ -94,17 +69,16 @@ namespace ReactionTest
         {
             pressed = DateTime.Now;
 
-            if (!testStarted)
+            if (testStarted)
             {
-                onChangeValue("Waitin.");
-                onChangeButton("Wait For it");
-                InitTest();
+                TestClick();
             }
             else
             {
-                onChangeValue("PLIIIS");
-                TestClick();
-
+                onChangeButton("Wait For it");
+                onChangeValue(" ");
+                onColorChangeButton(Color.LightGray);
+                InitTest();
             }
         }
 
@@ -112,12 +86,11 @@ namespace ReactionTest
         {
             timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
             Console.WriteLine(timeSinceActive + " ");
+            onColorChangeButton(Color.LightGray);
 
             if (timeSinceActive <= 100)
             { 
                 onChangeValue("Too early");
-
-
                 anticipationMiss++; 
             }
             else if (timeSinceActive <= 500)
@@ -146,6 +119,7 @@ namespace ReactionTest
 
         public void InitTest()
         {
+
             testStarted = true;
 
             randoms = RandomizeIntervals();
@@ -153,6 +127,7 @@ namespace ReactionTest
             testTimer.Interval = 1000;
             testTimer.Start();
             testTimer.Elapsed += TimerElapsedEvent;
+
         }
 
 
@@ -168,10 +143,11 @@ namespace ReactionTest
             if (duration == randoms[testNumber])
             {
                 onChangeValue("Press Now");
-
+                onColorChangeButton(Color.Red);
                 created = DateTime.Now;
+
             }
-            else if (duration == randoms[testNumber] + 6)
+            else if (duration == randoms[testNumber] + 4)
             {
                 onChangeValue("  ");
                 testNumber++; 
@@ -186,11 +162,62 @@ namespace ReactionTest
             for (int i = 0; i < testTimeSec / 10; i++)
             {
                 list.Add(i*10 + generator.Next(1, 10)); 
+                if(i > 0)
+                {
+                    if (list[i] - list[i - 1] < 6)
+                    {
+                        list[i] += (6 - (list[i] - list[i - 1]));
+                    }
+                }
+                
             }
 
             return list; 
         }
-        
+
+
+        public void onChangeValue(string NewText)
+        {
+            Task.Run(() =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    this.Resources["changeString"] = NewText;
+
+
+                });
+            });
+        }
+
+        public void onChangeButton(string NewText)
+        {
+            Task.Run(() =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    this.Resources["changeButton"] = NewText;
+
+
+                });
+            });
+        }
+
+        public void onColorChangeButton(Color color)
+        {
+            Task.Run(() =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    this.Resources["buttonColor"] = color;
+
+
+                });
+            });
+        }
+
     }
 
 }

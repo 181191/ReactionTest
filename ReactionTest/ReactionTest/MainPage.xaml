@@ -18,7 +18,8 @@
                 Padding ="60, 100, 60, 100"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                Clicked= "OnButtonClicked" />
+                Clicked= "OnButtonClicked"
+                BackgroundColor="{DynamicResource buttonColor}}"/>
     </StackLayout>
 
 </ContentPage>
