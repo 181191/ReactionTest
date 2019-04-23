@@ -4,11 +4,9 @@
              x:Class="ReactionTest.StartPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="PVT reaction messurement!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="Center"/>
+            <Image></Image>
                    
-            <Label Text="Choose length of The test:"
+            <Label Text="Choose test length:"
                    Scale="1.5"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
@@ -16,16 +14,20 @@
                     
                     
                     HorizontalOptions="CenterAndExpand"
-                    Clicked="ThreeMinuteTestClicked"/>
+                    Clicked="ThreeMinuteTestClicked"
+                    WidthRequest="250"/>
+                    
             <Button Text="7 minute test" 
                     
                      
                     HorizontalOptions="CenterAndExpand"
-                    Clicked="SevenMinuteTestClicked"/>
+                    Clicked="SevenMinuteTestClicked"
+                    WidthRequest="250"/>
             <Button Text="10 minute test" 
                     
                     HorizontalOptions="CenterAndExpand"
-                    Clicked="TenMinuteTestClicked"/>
+                    Clicked="TenMinuteTestClicked"
+                    WidthRequest="250"/>
 
         </StackLayout>
     </ContentPage.Content>
