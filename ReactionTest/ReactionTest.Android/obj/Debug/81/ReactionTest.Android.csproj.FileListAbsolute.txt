@@ -161,6 +161,13 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\System.Web.Services.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\Mono.Security.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\ReactionTest.dll.mdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FFImageLoading.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FFImageLoading.Forms.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FFImageLoading.Forms.Platform.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FFImageLoading.Platform.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FFImageLoading.Svg.Forms.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FFImageLoading.Svg.Platform.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\res\drawable\hvl.jpg
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\ReactionTest.Android.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\FormsViewGroup.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Mono.Android.pdb
