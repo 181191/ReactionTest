@@ -158,6 +158,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\HVL.jpg" />
+    <BundleResource Include="Resources\hvlLogo.png" />
   </ItemGroup>
 </Project>

@@ -62,7 +62,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <AndroidAsset Include="Assets\style.css" />
-    <AndroidResource Include="Resources\drawable\HVL.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -98,6 +97,9 @@
       <Project>{13548C7D-62FA-4EF5-8324-498B64CB9334}</Project>
       <Name>ReactionTest</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\hvlLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

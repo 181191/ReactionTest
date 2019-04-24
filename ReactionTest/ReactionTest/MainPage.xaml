@@ -17,12 +17,13 @@
                Margin="0, 50, 0, 0"/>
                
         <Button Text= "{DynamicResource changeButton}"
-                Padding ="60, 100, 60, 100"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked= "OnButtonClicked"
                 WidthRequest="400"
                 HeightRequest="400"
+                BorderColor="Black"
+                BorderWidth="2"
                 BackgroundColor="{DynamicResource buttonColor}}"/>
     </StackLayout>
 

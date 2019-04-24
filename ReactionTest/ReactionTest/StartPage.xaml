@@ -5,31 +5,43 @@
              Title="Reactiontest">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="HVL.jpg"
-                   VerticalOptions="Center"/>
+            <Image Source="hvlLogo.png"
+                   VerticalOptions="CenterAndExpand"
+                   Margin="5"/>
                    
-            <Label Text="Choose test length:"
+            
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+
+                <Label Text="Choose test length:"
                    Scale="1.5"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="3 minute test" 
+                <Button Text="3 minutes"
+                    FontSize="Large"
                     
                     
                     HorizontalOptions="CenterAndExpand"
                     Clicked="ThreeMinuteTestClicked"
-                    WidthRequest="400"/>
-                    
-            <Button Text="7 minute test" 
-                    
+                    WidthRequest="400"
+                    HeightRequest="70"/>
+
+                <Button Text="7 minutes" 
+                    FontSize="Large"
+
                      
                     HorizontalOptions="CenterAndExpand"
                     Clicked="SevenMinuteTestClicked"
-                    WidthRequest="400"/>
-            <Button Text="10 minute test" 
-                    
+                    WidthRequest="400"
+                    HeightRequest="70"/>
+                <Button Text="10 minutes" 
+                    FontSize="Large"
+
                     HorizontalOptions="CenterAndExpand"
                     Clicked="TenMinuteTestClicked"
-                    WidthRequest="400"/>
+                    WidthRequest="400"
+                    HeightRequest="70"/>
+            </StackLayout>
 
         </StackLayout>
     </ContentPage.Content>

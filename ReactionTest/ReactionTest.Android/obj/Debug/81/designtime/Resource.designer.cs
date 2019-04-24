@@ -4318,7 +4318,7 @@ namespace ReactionTest.Droid
 			public const int design_snackbar_background = 2131296347;
 			
 			// aapt resource value: 0x7F010002
-			public const int HVL = 2130771970;
+			public const int hvlLogo = 2130771970;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;

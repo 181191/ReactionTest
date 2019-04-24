@@ -29,6 +29,7 @@ namespace ReactionTest
 
         Timer testTimer = new Timer();
 
+        private int pressedWhen; 
         private double timeSinceActive;
 
         private int anticipationMiss;
@@ -50,7 +51,7 @@ namespace ReactionTest
            
             this.minutes = minutes; 
             InitializeComponent();
-            OnChangeValue(" ");
+            OnChangeValue("Gray = Wait \nRed = Press");
             OnChangeButton("Press To Start");
 
             if (minutes > 0)
@@ -65,7 +66,7 @@ namespace ReactionTest
            
 
             pressed = DateTime.Now;
-
+            pressedWhen = duration; 
 
             if (testStarted)
             {
@@ -73,7 +74,7 @@ namespace ReactionTest
             }
             else
             {
-                OnChangeButton("Wait");
+                OnChangeButton("");
                 OnChangeValue("");
                 OnColorChangeButton(Color.LightGray);
                 InitTest();
@@ -89,7 +90,7 @@ namespace ReactionTest
 
             if (timeSinceActive <= 100)
             { 
-                OnChangeValue("Too early");
+                OnChangeValue("Miss");
                 anticipationMiss++; 
             }
             else if (timeSinceActive <= 500)
@@ -118,7 +119,7 @@ namespace ReactionTest
 
         public void InitTest()
         {
-
+            OnChangeButton("...");
             testStarted = true;
 
             randoms = RandomizeIntervals();
@@ -137,35 +138,54 @@ namespace ReactionTest
             Console.WriteLine(duration);
             if (duration >= testTimeSec)
             {
-                testTimer.Stop(); 
+                testTimer.Stop();
+                TestFinished(); 
             }
  
             if (duration == randoms[testNumber])
             {
-                OnChangeButton("Press Now");
+                testNumber++;
+                OnChangeValue("");
                 OnColorChangeButton(Color.Red);
+                OnChangeButton("");
                 created = DateTime.Now;
             }
 
-            else if (duration == randoms[testNumber] + 3)
+            else if (pressedWhen + 2 == duration)
             {
                 OnChangeValue("");
-                testNumber++;
             }
+        }
+
+        public void TestFinished()
+        {
+            //TODO: DATA MANAGEMENT TYP ASYNC METODE
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+
+                DisplayAlert("Test finished", "Thank you for participating", "Finish");
+                Navigation.PopToRootAsync();
+
+            });
         }
 
         private List<int> RandomizeIntervals()
         {
             List<int> list = new List<int>();
             Random generator = new Random();
-            for (int i = 0; i < testTimeSec / 10; i++)
+            for (int i = 0; i < testTimeSec / 8; i++)
             {
                 list.Add(i*10 + generator.Next(1, 10)); 
                 if(i > 0)
                 {
-                    if (list[i] - list[i - 1] < 6)
+                    if (list[i] - list[i - 1] < 5)
                     {
-                        list[i] += (6 - (list[i] - list[i - 1]));
+                        list[i] += (5 - (list[i] - list[i - 1]));
+                    }
+                    if(list[i] - list[i-1] > 10)
+                    {
+                        list[i] -=  generator.Next(list[i] - list[i - 1] - 10, list[i] - list[i - 1] - 10 + 3); 
                     }
                 }
                 
@@ -173,6 +193,7 @@ namespace ReactionTest
 
             return list; 
         }
+
 
 
         public void OnChangeValue(string NewText)
