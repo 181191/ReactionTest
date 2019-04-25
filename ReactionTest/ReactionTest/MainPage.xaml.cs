@@ -19,6 +19,7 @@ namespace ReactionTest
     public partial class MainPage : ContentPage
     {
         private bool testStarted;
+        private bool buttonActive;
         private int testTimeSec = 60;
         int duration = 0;
         int testNumber = 0;
@@ -31,6 +32,7 @@ namespace ReactionTest
 
         private int pressedWhen; 
         private double timeSinceActive;
+        private int activeTime = 0;
 
         private int anticipationMiss;
         private int minorLaps;
@@ -68,9 +70,13 @@ namespace ReactionTest
             pressed = DateTime.Now;
             pressedWhen = duration; 
 
-            if (testStarted)
+            if (testStarted && buttonActive)
             {
                 TestClick();
+            }
+            else if (testStarted && !buttonActive)
+            {
+                buttonPress("Miss");
             }
             else
             {
@@ -79,42 +85,6 @@ namespace ReactionTest
                 OnColorChangeButton(Color.LightGray);
                 InitTest();
             }
-        }
-
-        private void TestClick()
-        {
-            timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
-            Console.WriteLine(timeSinceActive + " ");
-            OnColorChangeButton(Color.LightGray);
-            OnChangeButton("...");
-
-            if (timeSinceActive <= 100)
-            { 
-                OnChangeValue("Miss");
-                anticipationMiss++; 
-            }
-            else if (timeSinceActive <= 500)
-            {
-                hit++;
-                OnChangeValue("Hit");
-                
-            }
-            else if(timeSinceActive <= 1000)
-            {
-                OnChangeValue("Hit");
-                minorLaps++; 
-            }
-            else if (timeSinceActive <= 3000)
-            {
-                OnChangeValue("Hit");
-                majorLaps++; 
-            }
-            else
-            {
-                OnChangeValue("Miss");
-                miss++; 
-            }
-
         }
 
         public void InitTest()
@@ -130,7 +100,27 @@ namespace ReactionTest
 
         }
 
+        private void TestClick()
+        {
+            timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
+            Console.WriteLine(timeSinceActive + " ");
 
+            buttonActive = false;
+
+            if (timeSinceActive <= 100)
+            {
+                buttonPress("Miss");
+            }
+            else if (timeSinceActive <= 2000)
+            {
+                buttonPress("Hit");
+            }
+            else
+            {
+                buttonPress("Miss");
+            }
+
+        }
 
         public void TimerElapsedEvent(Object sender, ElapsedEventArgs a)
         {
@@ -141,16 +131,20 @@ namespace ReactionTest
                 testTimer.Stop();
                 TestFinished(); 
             }
- 
+
+            if (buttonActive)
+            {
+                activeTime++;
+            }
+            if (activeTime == 3)
+            {
+                DeactivateButton();
+            }
             if (duration == randoms[testNumber])
             {
-                testNumber++;
-                OnChangeValue("");
-                OnColorChangeButton(Color.Red);
-                OnChangeButton("");
-                created = DateTime.Now;
+                activateButton();
             }
-
+            
             else if (pressedWhen + 2 == duration)
             {
                 OnChangeValue("");
@@ -194,8 +188,39 @@ namespace ReactionTest
             return list; 
         }
 
+        public void buttonPress(string val)
+        {
+            OnChangeButton("...");
+            OnChangeValue(val);
+            OnColorChangeButton(Color.LightGray);
+            if (val.Equals("Hit"))
+            {
+                hit++;
+            }
+            else if (val.Equals("Miss"))
+            {
+                miss++;
+            }
+        }
 
+        public void activateButton()
+        {
+            buttonActive = true;
+            testNumber++;
+            OnChangeValue("");
+            OnColorChangeButton(Color.Red);
+            OnChangeButton("");
+            created = DateTime.Now;
+        }
 
+        public void DeactivateButton()
+        {
+            pressedWhen = duration;
+            OnChangeButton("...");
+            OnChangeValue("Miss");
+            OnColorChangeButton(Color.LightGray);
+            miss++;
+        }
         public void OnChangeValue(string NewText)
         {
             Task.Run(() =>

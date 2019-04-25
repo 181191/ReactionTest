@@ -25,3 +25,17 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\De
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\RegisterID.xaml.g.cs
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.deps.json
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.dll
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.pdb
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.csprojAssemblyReference.cache
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\RegisterID.xaml.g.cs
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\StartPage.xaml.g.cs
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.csproj.CoreCompileInputs.cache
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.AssemblyInfoInputs.cache
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.AssemblyInfo.cs
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.dll
+C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.pdb
