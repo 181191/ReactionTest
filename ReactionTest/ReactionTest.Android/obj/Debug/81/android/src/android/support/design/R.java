@@ -3112,7 +3112,7 @@ containing a value of this type.
         public static int design_ic_visibility_off=0x7f020058;
         public static int design_password_eye=0x7f020059;
         public static int design_snackbar_background=0x7f02005a;
-        public static int hvl=0x7f02005b;
+        public static int hvllogo=0x7f02005b;
         public static int ic_audiotrack_dark=0x7f02005c;
         public static int ic_audiotrack_light=0x7f02005d;
         public static int ic_dialog_close_dark=0x7f02005e;

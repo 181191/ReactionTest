@@ -733,20 +733,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ommid\\.nuget\\packages\\": {}
+    "C:\\Users\\eirik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
       "projectName": "ReactionTest.iOS",
-      "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
-      "packagesPath": "C:\\Users\\ommid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\obj\\",
+      "projectPath": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
+      "packagesPath": "C:\\Users\\eirik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\ommid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eirik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -759,8 +759,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
-              "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
+            "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
+              "projectPath": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
             }
           }
         }
