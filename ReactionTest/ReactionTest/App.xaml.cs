@@ -10,7 +10,12 @@ namespace ReactionTest
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new StartPage());
+            NavigationPage np = new NavigationPage(new StartPage());
+            np.Popped += (s, e) =>
+            {
+                Console.WriteLine("Popped");
+            };
+            MainPage = np;
         }
 
         protected override void OnStart()

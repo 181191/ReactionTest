@@ -25,11 +25,11 @@ namespace ReactionTest
         private List<int> randoms;
         private int minutes;
         private string userID;
-
+        
 
         Timer testTimer = new Timer();
 
-        private int pressedWhen; 
+        private int pressedWhen;
         private double timeSinceActive;
 
         private int anticipationMiss;
@@ -37,7 +37,7 @@ namespace ReactionTest
         private int majorLaps;
         private int miss;
         private int hit;
-       
+
         private DateTime created;
         private DateTime pressed;
 
@@ -48,14 +48,14 @@ namespace ReactionTest
         }
         public MainPage(int minutes, string userID)
         {
-           
-            this.minutes = minutes; 
+
+            this.minutes = minutes;
             InitializeComponent();
             OnChangeValue("Gray = Wait \nRed = Press");
             OnChangeButton("Press To Start");
 
             if (minutes > 0)
-                testTimeSec *=  minutes;
+                testTimeSec *= minutes;
 
             this.userID = userID;
 
@@ -63,10 +63,10 @@ namespace ReactionTest
 
         void OnButtonClicked(object sender, EventArgs args)
         {
-           
+
 
             pressed = DateTime.Now;
-            pressedWhen = duration; 
+            pressedWhen = duration;
 
             if (testStarted)
             {
@@ -89,30 +89,30 @@ namespace ReactionTest
             OnChangeButton("...");
 
             if (timeSinceActive <= 100)
-            { 
+            {
                 OnChangeValue("Miss");
-                anticipationMiss++; 
+                anticipationMiss++;
             }
             else if (timeSinceActive <= 500)
             {
                 hit++;
                 OnChangeValue("Hit");
-                
+
             }
-            else if(timeSinceActive <= 1000)
+            else if (timeSinceActive <= 1000)
             {
                 OnChangeValue("Hit");
-                minorLaps++; 
+                minorLaps++;
             }
             else if (timeSinceActive <= 3000)
             {
                 OnChangeValue("Hit");
-                majorLaps++; 
+                majorLaps++;
             }
             else
             {
                 OnChangeValue("Miss");
-                miss++; 
+                miss++;
             }
 
         }
@@ -139,9 +139,9 @@ namespace ReactionTest
             if (duration >= testTimeSec)
             {
                 testTimer.Stop();
-                TestFinished(); 
+                TestFinished();
             }
- 
+
             if (duration == randoms[testNumber])
             {
                 testNumber++;
@@ -176,24 +176,23 @@ namespace ReactionTest
             Random generator = new Random();
             for (int i = 0; i < testTimeSec / 8; i++)
             {
-                list.Add(i*10 + generator.Next(1, 10)); 
-                if(i > 0)
+                list.Add(i * 10 + generator.Next(1, 10));
+                if (i > 0)
                 {
                     if (list[i] - list[i - 1] < 5)
                     {
                         list[i] += (5 - (list[i] - list[i - 1]));
                     }
-                    if(list[i] - list[i-1] > 10)
+                    if (list[i] - list[i - 1] > 10)
                     {
-                        list[i] -=  generator.Next(list[i] - list[i - 1] - 10, list[i] - list[i - 1] - 10 + 3); 
+                        list[i] -= generator.Next(list[i] - list[i - 1] - 10, list[i] - list[i - 1] - 10 + 3);
                     }
                 }
-                
+
             }
 
-            return list; 
+            return list;
         }
-
 
 
         public void OnChangeValue(string NewText)
@@ -219,7 +218,6 @@ namespace ReactionTest
 
                     this.Resources["changeButton"] = NewText;
 
-
                 });
             });
         }
@@ -232,7 +230,6 @@ namespace ReactionTest
                 {
 
                     this.Resources["buttonColor"] = color;
-
 
                 });
             });

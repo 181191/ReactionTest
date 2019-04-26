@@ -33,6 +33,7 @@ namespace ReactionTest
                 testID = ID.Text;
                 Page mPage = new MainPage(testLenght, testID);
                 mPage.Title = testID;
+                mPage.Dis
                 Navigation.PushAsync(mPage);
             }
             else
