@@ -26,7 +26,7 @@ namespace ReactionTest
         private List<int> randoms;
         private int minutes;
         private string userID;
-
+        private double[] clicks;
 
         Timer testTimer = new Timer();
 
@@ -216,6 +216,8 @@ namespace ReactionTest
         public void DeactivateButton()
         {
             pressedWhen = duration;
+            buttonActive = false;
+            activeTime = 0;
             OnChangeButton("...");
             OnChangeValue("Miss");
             OnColorChangeButton(Color.LightGray);
