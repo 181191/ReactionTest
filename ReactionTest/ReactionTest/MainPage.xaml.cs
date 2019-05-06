@@ -20,13 +20,13 @@ namespace ReactionTest
     {
         private bool testStarted;
         private bool buttonActive;
-        private int testTimeSec = 60;
+        private int testTimeSec = 6;
         int duration = 0;
         int testNumber = 0;
         private List<int> randoms;
         private int minutes;
         private string userID;
-        private double[] clicks;
+        private List<double> clicks = new List<double>();
 
         Timer testTimer = new Timer();
 
@@ -34,9 +34,6 @@ namespace ReactionTest
         private double timeSinceActive;
         private int activeTime = 0;
 
-        private int anticipationMiss;
-        private int minorLaps;
-        private int majorLaps;
         private int miss;
         private int hit;
        
@@ -104,7 +101,7 @@ namespace ReactionTest
         {
             timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
             Console.WriteLine(timeSinceActive + " ");
-
+            
             buttonActive = false;
 
             if (timeSinceActive <= 100)
@@ -114,6 +111,7 @@ namespace ReactionTest
             else if (timeSinceActive <= 2000)
             {
                 buttonPress("Hit");
+                clicks.Add(timeSinceActive);
             }
             else
             {
@@ -125,7 +123,6 @@ namespace ReactionTest
         public void TimerElapsedEvent(Object sender, ElapsedEventArgs a)
         {
             duration++;
-            Console.WriteLine(duration);
             if (duration >= testTimeSec)
             {
                 testTimer.Stop();
@@ -154,7 +151,12 @@ namespace ReactionTest
         public void TestFinished()
         {
             //TODO: DATA MANAGEMENT TYP ASYNC METODE
-
+            Console.WriteLine("");
+            foreach(double d in clicks)
+            {
+                Console.Write(d + " ");
+            }
+            Console.WriteLine("");
             Device.BeginInvokeOnMainThread(() =>
             {
 
