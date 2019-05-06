@@ -1019,6 +1019,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.syncfusion.com/nuget_aspnet/nuget/getsyncfusionpackages/aspnet": {},
+        "http://nuget.syncfusion.com/nuget_universal/nuget/getsyncfusionpackages/universal": {},
+        "http://nuget.syncfusion.com/nuget_universalwindows/nuget/getsyncfusionpackages/universalwindows": {},
+        "http://nuget.syncfusion.com/nuget_windows-forms/nuget/getsyncfusionpackages/windows-forms": {},
+        "http://nuget.syncfusion.com/nuget_windowsphone/nuget/getsyncfusionpackages/windowsphone": {},
+        "http://nuget.syncfusion.com/nuget_wpf/nuget/getsyncfusionpackages/wpf": {},
+        "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

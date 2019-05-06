@@ -160,4 +160,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\hvlLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Settings.png" />
+  </ItemGroup>
 </Project>

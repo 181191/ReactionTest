@@ -39,3 +39,4 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\bin\De
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.dll
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\DataPage.xaml.g.cs

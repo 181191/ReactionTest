@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="DataPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="RegisterID.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

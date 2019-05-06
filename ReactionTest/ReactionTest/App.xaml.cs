@@ -11,10 +11,6 @@ namespace ReactionTest
         {
             InitializeComponent();
             NavigationPage np = new NavigationPage(new StartPage());
-            np.Popped += (s, e) =>
-            {
-                Console.WriteLine("Popped");
-            };
             MainPage = np;
         }
 

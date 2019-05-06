@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReactionTest.StartPage"
              Title="Reactiontest">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Settings.png" Clicked="Settings_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Image Source="hvlLogo.png"
@@ -19,7 +22,6 @@
                 HorizontalOptions="CenterAndExpand" />
                 <Button Text="3 minutes"
                     FontSize="Large"
-                    
                     
                     HorizontalOptions="CenterAndExpand"
                     Clicked="ThreeMinuteTestClicked"

@@ -20,7 +20,7 @@ namespace ReactionTest
     {
         private bool testStarted;
         private bool buttonActive;
-        private int testTimeSec = 6;
+        private int testTimeSec = 60;
         int duration = 0;
         int testNumber = 0;
         private List<int> randoms;
@@ -50,13 +50,15 @@ namespace ReactionTest
            
             this.minutes = minutes; 
             InitializeComponent();
-            OnChangeValue("Gray = Wait \nRed = Press");
+            OnChangeValue("Grey = Wait \nRed = Press");
             OnChangeButton("Press To Start");
+            OnColorChangeButton(Color.LightGreen);
 
             if (minutes > 0)
                 testTimeSec *=  minutes;
 
             this.userID = userID;
+            
 
         }
 
@@ -265,6 +267,11 @@ namespace ReactionTest
 
                 });
             });
+        }
+
+        protected override void OnDisappearing()
+        {
+            testTimer.Stop();
         }
 
     }

@@ -15,7 +15,7 @@ namespace ReactionTest
 		public StartPage ()
 		{
 			InitializeComponent ();
-		}
+        }
 
         private void ThreeMinuteTestClicked(object sender, EventArgs e)
         {
@@ -32,6 +32,11 @@ namespace ReactionTest
         private void TenMinuteTestClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RegisterID(10));
+        }
+
+        private void Settings_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DataPage());
         }
     }
 }
