@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "e0d9401ad2aafc3381717fd9b9774feda38ee271"
+    "signature": "c37f53306b390aa316174466dd9098774260bef4"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,11 +9,20 @@
     ".NETStandard,Version=v2.0/": {
       "ReactionTest/1.0.0": {
         "dependencies": {
+          "Acr.UserDialogs": "7.0.4",
           "NETStandard.Library": "2.0.3",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "runtime": {
           "ReactionTest.dll": {}
+        }
+      },
+      "Acr.UserDialogs/7.0.4": {
+        "runtime": {
+          "lib/netstandard2.0/Acr.UserDialogs.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -45,6 +54,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Acr.UserDialogs/7.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J+3+rSVtAAUqvaXC0NGZ6HAcSXMaMyqvKsV1sMoraT7g+Zv/r4QmgUUITPu875n0uO57Y87Xn6IbLVDPje6tlw==",
+      "path": "acr.userdialogs/7.0.4",
+      "hashPath": "acr.userdialogs.7.0.4.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

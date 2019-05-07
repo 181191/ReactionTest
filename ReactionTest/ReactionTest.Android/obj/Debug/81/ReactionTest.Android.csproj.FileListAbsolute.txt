@@ -290,7 +290,10 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.ComponentModel.Composition.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Mono.Security.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\Acr.UserDialogs.dll.mdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\ReactionTest.dll.mdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\ReactionTest.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\FormsViewGroup.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Mono.Android.pdb
@@ -314,4 +317,5 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\ReactionTest.dll.mdb

@@ -1,4 +1,6 @@
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\ReactionTest.Android.dll
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Acr.UserDialogs.dll
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\AndHUD.dll
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\FormsViewGroup.dll
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Java.Interop.dll
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Mono.Android.dll

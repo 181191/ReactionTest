@@ -14,7 +14,22 @@ namespace ReactionTest
 	{
 		public DataPage ()
 		{
-			InitializeComponent ();
 		}
-	}
+        public DataPage(string password)
+        {
+            if(password == "1234")
+            {
+                InitializeComponent();
+            }
+            else
+            {
+                Navigation.PopAsync();
+            }
+        }
+
+        private void Export_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
