@@ -245,6 +245,7 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\R.cs.flag
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\R.txt
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\uploadflags.txt
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\res\drawable\settings.png
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\FormsViewGroup.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\Mono.Android.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\mscorlib.pdb
@@ -266,8 +267,8 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\System.ComponentModel.Composition.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\System.Web.Services.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\Mono.Security.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\ReactionTest.dll.mdb
-C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\res\drawable\settings.png
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\ReactionTest.Android.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\FormsViewGroup.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Mono.Android.pdb
@@ -282,15 +283,14 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Net.Http.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Runtime.Serialization.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.ServiceModel.Internals.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.ComponentModel.Composition.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Data.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Numerics.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Transactions.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.IO.Compression.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.IO.Compression.FileSystem.pdb
-C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.ComponentModel.Composition.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Mono.Security.pdb
-C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\ReactionTest.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Acr.UserDialogs.dll.mdb
@@ -317,5 +317,7 @@ C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Androi
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\bin\Debug\netstandard2.0\ReactionTest.dll
+C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\bin\Debug\ReactionTest.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\Acr.UserDialogs.dll.mdb
 C:\Users\ommid\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest.Android\obj\Debug\81\linksrc\ReactionTest.dll.mdb

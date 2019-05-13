@@ -4,6 +4,7 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="ReactionTest.DataPage">
     <ContentPage.Content>
+        
         <StackLayout Padding="15">
             <Label Text="Pick date to export: "
                 VerticalOptions="CenterAndExpand" 
@@ -13,14 +14,21 @@
             <Label Text="From: "
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <DatePicker VerticalOptions="Center">
-
+            <DatePicker x:Name="fromDate" VerticalOptions="Center" Date="{DynamicResource fromDate}">
+                <DatePicker.Format>
+                    dd-MM-yyyy
+                </DatePicker.Format>
             </DatePicker>
-            
+
+
             <Label Text="To: "
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <DatePicker VerticalOptions="Center" Date="{x:Static sys:DateTime.Now}"></DatePicker>
+            <DatePicker x:Name="toDate" VerticalOptions="Center" Date="{DynamicResource toDate}">
+                <DatePicker.Format>
+                    dd-MM-yyyy
+                </DatePicker.Format>
+            </DatePicker>
             <Button Text="Export" Clicked="Export_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

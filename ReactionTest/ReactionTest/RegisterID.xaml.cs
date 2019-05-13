@@ -14,6 +14,7 @@ namespace ReactionTest
 	{
         private string testID;
         private int testLenght;
+
 		public RegisterID ()
 		{
 			InitializeComponent();

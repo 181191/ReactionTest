@@ -3765,6 +3765,8 @@ containing a value of this type.
         public static int launcher_foreground=0x7f030002;
     }
     public static final class string {
+        public static int ApplicationName=0x7f0a003d;
+        public static int Hello=0x7f0a003c;
         public static int abc_action_bar_home_description=0x7f0a0015;
         public static int abc_action_bar_up_description=0x7f0a0016;
         public static int abc_action_menu_overflow_description=0x7f0a0017;
@@ -3797,7 +3799,7 @@ containing a value of this type.
         public static int appbar_scrolling_view_behavior=0x7f0a0033;
         public static int bottom_sheet_behavior=0x7f0a0034;
         public static int character_counter_pattern=0x7f0a0035;
-        public static int library_name=0x7f0a003c;
+        public static int library_name=0x7f0a003e;
         public static int mr_button_content_description=0x7f0a0000;
         public static int mr_cast_button_connected=0x7f0a0001;
         public static int mr_cast_button_connecting=0x7f0a0002;

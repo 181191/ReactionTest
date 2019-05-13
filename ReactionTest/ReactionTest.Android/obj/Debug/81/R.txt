@@ -1300,6 +1300,8 @@ int layout tooltip 0x7f04004a
 int mipmap icon 0x7f030000
 int mipmap icon_round 0x7f030001
 int mipmap launcher_foreground 0x7f030002
+int string ApplicationName 0x7f0a003d
+int string Hello 0x7f0a003c
 int string abc_action_bar_home_description 0x7f0a0015
 int string abc_action_bar_up_description 0x7f0a0016
 int string abc_action_menu_overflow_description 0x7f0a0017
@@ -1332,7 +1334,7 @@ int string abc_toolbar_collapse_description 0x7f0a0025
 int string appbar_scrolling_view_behavior 0x7f0a0033
 int string bottom_sheet_behavior 0x7f0a0034
 int string character_counter_pattern 0x7f0a0035
-int string library_name 0x7f0a003c
+int string library_name 0x7f0a003e
 int string mr_button_content_description 0x7f0a0000
 int string mr_cast_button_connected 0x7f0a0001
 int string mr_cast_button_connecting 0x7f0a0002

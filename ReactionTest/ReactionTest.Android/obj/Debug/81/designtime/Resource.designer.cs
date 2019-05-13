@@ -63,6 +63,8 @@ namespace ReactionTest.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::ReactionTest.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::ReactionTest.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::ReactionTest.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::PCLStorage.Resource.String.ApplicationName = global::ReactionTest.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::ReactionTest.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::ReactionTest.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::ReactionTest.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::ReactionTest.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -6052,11 +6054,17 @@ namespace ReactionTest.Droid
 			// aapt resource value: 0x7F15001E
 			public const int appbar_scrolling_view_behavior = 2132082718;
 			
+			// aapt resource value: 0x7F090004
+			public const int ApplicationName = 2131296260;
+			
 			// aapt resource value: 0x7F15001F
 			public const int bottom_sheet_behavior = 2132082719;
 			
 			// aapt resource value: 0x7F150020
 			public const int character_counter_pattern = 2132082720;
+			
+			// aapt resource value: 0x7F090003
+			public const int Hello = 2131296259;
 			
 			// aapt resource value: 0x7F090002
 			public const int library_name = 2131296258;

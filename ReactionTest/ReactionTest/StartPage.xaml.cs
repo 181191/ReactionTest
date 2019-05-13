@@ -37,6 +37,7 @@ namespace ReactionTest
 
         private async void Settings_Clicked(object sender, EventArgs e)
         {
+
             PromptConfig pc = new PromptConfig{ InputType=InputType.Password, Title = "Password:", IsCancellable = true, MaxLength = 4};
 
             PromptResult pResult = await UserDialogs.Instance.PromptAsync(pc);

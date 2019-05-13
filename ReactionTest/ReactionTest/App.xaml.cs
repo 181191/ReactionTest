@@ -10,8 +10,7 @@ namespace ReactionTest
         public App()
         {
             InitializeComponent();
-            NavigationPage np = new NavigationPage(new StartPage());
-            MainPage = np;
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()
