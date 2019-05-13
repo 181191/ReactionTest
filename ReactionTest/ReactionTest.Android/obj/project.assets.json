@@ -1193,20 +1193,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ommid\\.nuget\\packages\\": {}
+    "C:\\Users\\eirik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
+      "projectUniqueName": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
       "projectName": "ReactionTest.Android",
-      "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
-      "packagesPath": "C:\\Users\\ommid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\obj\\",
+      "projectPath": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
+      "packagesPath": "C:\\Users\\eirik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\ommid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eirik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1214,20 +1214,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.syncfusion.com/nuget_aspnet/nuget/getsyncfusionpackages/aspnet": {},
-        "http://nuget.syncfusion.com/nuget_universal/nuget/getsyncfusionpackages/universal": {},
-        "http://nuget.syncfusion.com/nuget_universalwindows/nuget/getsyncfusionpackages/universalwindows": {},
-        "http://nuget.syncfusion.com/nuget_windows-forms/nuget/getsyncfusionpackages/windows-forms": {},
-        "http://nuget.syncfusion.com/nuget_windowsphone/nuget/getsyncfusionpackages/windowsphone": {},
-        "http://nuget.syncfusion.com/nuget_wpf/nuget/getsyncfusionpackages/wpf": {},
-        "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
-              "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
+            "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
+              "projectPath": "C:\\Users\\eirik\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
             }
           }
         }
