@@ -17,6 +17,7 @@ using System.IO;
 using System.Reflection;
 using PCLStorage;
 
+
 namespace ReactionTest
 {
     public partial class MainPage : ContentPage
@@ -155,7 +156,9 @@ namespace ReactionTest
         public async void TestFinished()
         {
             //TODO: DATA MANAGEMENT TYP ASYNC METODE
-            //Result result = new result(userID,  )
+            Result result = new Result(userID, hit, miss, testTimeSec, clicks);
+            result.toDatabase();
+
             await SaveCourse();
             await ReadCourse();
             Device.BeginInvokeOnMainThread(() =>

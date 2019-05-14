@@ -1098,6 +1098,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Acr.UserDialogs >= 7.0.4",
+      "Newtonsoft.Json >= 12.0.2",
       "PCLStorage >= 1.0.2",
       "Plugin.Permissions >= 3.0.0.12",
       "ReactionTest >= 1.0.0",
@@ -1144,6 +1145,10 @@
           "Acr.UserDialogs": {
             "target": "Package",
             "version": "[7.0.4, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.2, )"
           },
           "PCLStorage": {
             "target": "Package",
