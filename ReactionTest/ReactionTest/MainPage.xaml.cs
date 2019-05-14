@@ -155,6 +155,7 @@ namespace ReactionTest
         public async void TestFinished()
         {
             //TODO: DATA MANAGEMENT TYP ASYNC METODE
+            //Result result = new result(userID,  )
             await SaveCourse();
             await ReadCourse();
             Device.BeginInvokeOnMainThread(() =>

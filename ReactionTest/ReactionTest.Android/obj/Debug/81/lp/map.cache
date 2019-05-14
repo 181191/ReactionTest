@@ -33,3 +33,4 @@ Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
 System.Resources.ResourceManager
+Newtonsoft.Json

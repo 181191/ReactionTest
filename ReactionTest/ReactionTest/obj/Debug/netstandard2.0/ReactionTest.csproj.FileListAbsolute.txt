@@ -38,6 +38,5 @@ C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\De
 C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.csproj.CoreCompileInputs.cache
 C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.AssemblyInfoInputs.cache
 C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.AssemblyInfo.cs
-C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.dll
 C:\Users\eirik\Source\Repos\181191\ReactionTest\ReactionTest\ReactionTest\obj\Debug\netstandard2.0\ReactionTest.pdb
