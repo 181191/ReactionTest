@@ -57,8 +57,9 @@ namespace ReactionTest
         {
             return reactionTimes; 
         }
-
-        public async void toDatabase(HttpClient client, string url, Result result)
+       
+        // HttpClient client,
+        public async void toDatabase()
         {
             string sContentType = "application/json";
             JArray arr = new JArray();
@@ -81,9 +82,9 @@ namespace ReactionTest
             };
 
             arr.Add(json);
-
+            string url = "http://localhost:50362/api/Values/";
             HttpClient oHttpClient = new HttpClient();
-            var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(arr.ToString(), Encoding.UTF8, sContentType));
+            var oTaskPostAsync = oHttpClient.PutAsync(url, new StringContent(arr.ToString(), Encoding.UTF8, sContentType));
 //            oTaskPostAsync.ContinueWith((oHttpResponseMessage) =>
 //            {
 //                // response of post here
