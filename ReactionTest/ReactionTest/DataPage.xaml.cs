@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PCLStorage;
 using System.IO;
+using Xamarin.Essentials;
+using Acr.UserDialogs;
 
 namespace ReactionTest
 {
@@ -35,13 +37,66 @@ namespace ReactionTest
 
         private async void Export_Clicked(object sender, EventArgs e)
         {
+            DateTime fromDatePicked = fromDate.Date;
+            DateTime toDatePicked = toDate.Date;
+
             //Whole dataset as string format:
             string[][] dataSet = await ReadData("Data.csv");
 
             //Find data with wanted sets:
-            string[][] wantedDates = checkDates(dataSet);
+            string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
             string textToWrite = convertToString(wantedDates);
-            DependencyService.Get<ISaveFile>().saveFile("Datafile.csv", textToWrite);
+            byte[] bytes = Encoding.ASCII.GetBytes(textToWrite);
+            DependencyService.Get<ISendMail>().sendMail(bytes, "text/csv", textToWrite);
+
+        }
+
+        
+        private async void SendAsMail_Clicked(object sender, EventArgs e)
+        {
+            DateTime fromDatePicked = fromDate.Date;
+            DateTime toDatePicked = toDate.Date;
+
+            //Whole dataset as string format:
+            string[][] dataSet = await ReadData("Data.csv");
+
+            //Find data with wanted sets:
+            string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
+            string textToWrite = convertToString(wantedDates);
+            await WriteFile(textToWrite);
+
+
+
+            //IFile DatafileBetweenDates = null;
+
+            //try
+            //{
+            //    IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
+            //    IFolder folder = await rootFolder.GetFolderAsync("ReactionTest");
+            //    DatafileBetweenDates = await folder.GetFileAsync("DataBetweenDates.csv");
+            //}
+            //catch (PCLStorage.Exceptions.FileNotFoundException) { }
+            //string pathplease = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DataBetweenDates.csv");
+
+            //ExperimentalFeatures.Enable("EmailAttachments_Experimental");
+            //List<EmailAttachment> eList = new List<EmailAttachment>() {  new EmailAttachment(pathplease) };
+
+            //List<string> toList = new List<string>();
+            
+            //PromptConfig pc = new PromptConfig { InputType = InputType.Email, Title = "Recipient: ", IsCancellable = true};
+
+            //PromptResult pResult = await UserDialogs.Instance.PromptAsync(pc);
+
+
+            //if (pResult.Ok)
+            //{
+            //    toList.Add(pResult.Text);
+            //    await SendEmail("Data From Test", $"Sendt testdata from {fromDatePicked.Date} to {toDatePicked.Date}", toList, eList);
+            //}
+            //else if (pResult.Ok && string.IsNullOrWhiteSpace(pResult.Text))
+            //{
+            //    UserDialogs.Instance.Alert("Email can't be blanc");
+            //}
 
         }
 
@@ -67,10 +122,9 @@ namespace ReactionTest
 
 
         //Method to check dates, also removes null rows from array
-        private string[][] checkDates(string[][] dataSet)
+        private string[][] checkDates(string[][] dataSet, DateTime fromDatePicked, DateTime toDatePicked)
         {
-            DateTime fromDatePicked = fromDate.Date;
-            DateTime toDatePicked = toDate.Date;
+
 
             string[][] matchingSets = new string[dataSet.Length][];
             int counter = 0;
@@ -99,7 +153,16 @@ namespace ReactionTest
             return matchingSets;
 
         }
-    
+
+        public async Task WriteFile(string textToWrite)
+        {
+            IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
+            IFolder folder = await rootFolder.CreateFolderAsync("ReactionTime",
+                CreationCollisionOption.OpenIfExists);
+            IFile file = await folder.CreateFileAsync("DataBetweenDates.csv",
+                CreationCollisionOption.ReplaceExisting);
+            await file.WriteAllTextAsync(textToWrite);
+        }
         private async Task<string[][]> ReadData(string filename)
         {
             string[][] dataSet = null; 
@@ -107,7 +170,7 @@ namespace ReactionTest
             //Get file
             try
             {
-                IFolder rootFolder = FileSystem.Current.LocalStorage;
+                IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
                 IFolder folder = await rootFolder.GetFolderAsync("ReactionTest");
                 data = await folder.GetFileAsync(filename);
             }
@@ -150,42 +213,32 @@ namespace ReactionTest
 
             return null;
         }
-        
-        //private async Task<string[][]> prepareData(IFile data)
-        //{
-        //    string[][] result;
 
-        //    if (data != null)
-        //    {
-        //        int counter = 0;
-        //        string s = await data.ReadAllTextAsync();
-        //        string[] timeData = new string[100];
-        //        string[] lines = s.Split(
-        //                new[] { Environment.NewLine },
-        //                StringSplitOptions.None);
-
-        //        //Lines consist of start-header and an empty string at end which is not to be sent ot the database, therefor: (-2)
-        //        result = new string[lines.Length-1][];
-
-        //        for (int i = 0; i < lines.Length; i++)
-        //        {
-        //            timeData = lines[i].Split(divideSign);
-
-        //            while (!string.IsNullOrWhiteSpace(timeData[counter]))
-        //            {
-        //                result[i][counter] = timeData[counter];
-
-        //                counter++;
-        //            }
-        //            counter = 0;
-        //        }
-
-        //     return result;
-        //    }
-
-        //     return null;
-
-        //}
+        public async Task SendEmail(string subject, string body, List<string> recipients, List<Xamarin.Essentials.EmailAttachment> attachments)
+        {
+            try
+            {
+                var message = new EmailMessage
+                {
+                    Subject = subject,
+                    Body = body,
+                    To = recipients,
+                    Attachments = attachments
+                    //Cc = ccRecipients,
+                    //Bcc = bccRecipients
+                };
+                await Email.ComposeAsync(message);
+            }
+            catch (FeatureNotSupportedException fbsEx)
+            {
+                await DisplayAlert("Not supported", "Email is not supported on this device", "Ok");
+            }
+            catch (Exception ex)
+            {
+                // Some other exception occurred
+                await DisplayAlert("Error", "Email is not supported on this device", "Ok");
+            }
+        }
 
 
     }

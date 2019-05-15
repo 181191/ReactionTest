@@ -1,6 +1,7 @@
 Acr.UserDialogs
 AndHUD
 FormsViewGroup
+Newtonsoft.Json
 PCLStorage.Abstractions
 PCLStorage
 Plugin.CurrentActivity
@@ -27,10 +28,10 @@ Xamarin.Android.Support.v7.MediaRouter
 Xamarin.Android.Support.v7.Palette
 Xamarin.Android.Support.v7.RecyclerView
 Xamarin.Android.Support.Vector.Drawable
+Xamarin.Essentials
 Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
 System.Resources.ResourceManager
-Newtonsoft.Json

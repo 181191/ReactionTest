@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="ReactionTest.DataPage">
     <ContentPage.Content>
         
@@ -29,7 +28,8 @@
                     dd-MM-yyyy
                 </DatePicker.Format>
             </DatePicker>
-            <Button Text="Export" Clicked="Export_Clicked"/>
+            <Button Text="Export (Android only)" Clicked="Export_Clicked"/>
+            <Button Text="SendMail" Clicked="SendAsMail_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
