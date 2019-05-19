@@ -28,8 +28,8 @@
                     dd-MM-yyyy
                 </DatePicker.Format>
             </DatePicker>
-            <Button Text="Export (Android only)" Clicked="Export_Clicked"/>
-            <Button Text="SendMail" Clicked="SendAsMail_Clicked"/>
+            <Button Text="Export (Android)" Clicked="ExportAndroid_Clicked"/>
+            <Button Text="Export (iOS)" Clicked="ExportiOS_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

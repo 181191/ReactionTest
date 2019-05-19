@@ -280,7 +280,7 @@ namespace ReactionTest
         {
             string dataText;
             IFolder rootFolder = FileSystem.Current.LocalStorage;
-            IFolder folder = await rootFolder.CreateFolderAsync("ReactionTest",
+            IFolder folder = await rootFolder.CreateFolderAsync("Documents",
                 CreationCollisionOption.OpenIfExists);
             IFile data;
             try
@@ -312,7 +312,7 @@ namespace ReactionTest
         private async Task ReadCourse()
         {
             IFolder rootFolder = FileSystem.Current.LocalStorage;
-            IFolder folder = await rootFolder.GetFolderAsync("ReactionTest");
+            IFolder folder = await rootFolder.GetFolderAsync("Documents");
             IFile data = await folder.GetFileAsync("Data.csv");
             Console.WriteLine(await data.ReadAllTextAsync());
         }

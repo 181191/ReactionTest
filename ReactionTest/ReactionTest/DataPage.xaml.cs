@@ -35,7 +35,7 @@ namespace ReactionTest
 
 
 
-        private async void Export_Clicked(object sender, EventArgs e)
+        private async void ExportAndroid_Clicked(object sender, EventArgs e)
         {
             DateTime fromDatePicked = fromDate.Date;
             DateTime toDatePicked = toDate.Date;
@@ -46,13 +46,13 @@ namespace ReactionTest
             //Find data with wanted sets:
             string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
             string textToWrite = convertToString(wantedDates);
-            byte[] bytes = Encoding.ASCII.GetBytes(textToWrite);
-            DependencyService.Get<ISendMail>().sendMail(bytes, "text/csv", textToWrite);
+            //byte[] bytes = Encoding.ASCII.GetBytes(textToWrite);
+            DependencyService.Get<ISaveFile>().saveFile("DataBetweenDates.csv", textToWrite);
 
         }
 
         
-        private async void SendAsMail_Clicked(object sender, EventArgs e)
+        private async void ExportiOS_Clicked(object sender, EventArgs e)
         {
             DateTime fromDatePicked = fromDate.Date;
             DateTime toDatePicked = toDate.Date;
@@ -64,39 +64,8 @@ namespace ReactionTest
             string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
             string textToWrite = convertToString(wantedDates);
             await WriteFile(textToWrite);
-
-
-
-            //IFile DatafileBetweenDates = null;
-
-            //try
-            //{
-            //    IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
-            //    IFolder folder = await rootFolder.GetFolderAsync("ReactionTest");
-            //    DatafileBetweenDates = await folder.GetFileAsync("DataBetweenDates.csv");
-            //}
-            //catch (PCLStorage.Exceptions.FileNotFoundException) { }
-            //string pathplease = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DataBetweenDates.csv");
-
-            //ExperimentalFeatures.Enable("EmailAttachments_Experimental");
-            //List<EmailAttachment> eList = new List<EmailAttachment>() {  new EmailAttachment(pathplease) };
-
-            //List<string> toList = new List<string>();
-            
-            //PromptConfig pc = new PromptConfig { InputType = InputType.Email, Title = "Recipient: ", IsCancellable = true};
-
-            //PromptResult pResult = await UserDialogs.Instance.PromptAsync(pc);
-
-
-            //if (pResult.Ok)
-            //{
-            //    toList.Add(pResult.Text);
-            //    await SendEmail("Data From Test", $"Sendt testdata from {fromDatePicked.Date} to {toDatePicked.Date}", toList, eList);
-            //}
-            //else if (pResult.Ok && string.IsNullOrWhiteSpace(pResult.Text))
-            //{
-            //    UserDialogs.Instance.Alert("Email can't be blanc");
-            //}
+            string path = await getPath("DataBetweenDates.csv");
+            await DependencyService.Get<IShare>().Show("DataBetweenDates.csv", textToWrite, path);
 
         }
 
@@ -157,12 +126,22 @@ namespace ReactionTest
         public async Task WriteFile(string textToWrite)
         {
             IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
-            IFolder folder = await rootFolder.CreateFolderAsync("ReactionTime",
+            IFolder folder = await rootFolder.CreateFolderAsync("Documents",
                 CreationCollisionOption.OpenIfExists);
             IFile file = await folder.CreateFileAsync("DataBetweenDates.csv",
                 CreationCollisionOption.ReplaceExisting);
             await file.WriteAllTextAsync(textToWrite);
         }
+
+        private async Task<string> getPath(string filename)
+        {
+            IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
+            IFolder folder = await rootFolder.GetFolderAsync("Documents");
+            IFile file = await folder.GetFileAsync(filename);
+
+            return file.Path;
+        }
+
         private async Task<string[][]> ReadData(string filename)
         {
             string[][] dataSet = null; 
@@ -171,7 +150,7 @@ namespace ReactionTest
             try
             {
                 IFolder rootFolder = PCLStorage.FileSystem.Current.LocalStorage;
-                IFolder folder = await rootFolder.GetFolderAsync("ReactionTest");
+                IFolder folder = await rootFolder.GetFolderAsync("Documents");
                 data = await folder.GetFileAsync(filename);
             }
             catch (PCLStorage.Exceptions.FileNotFoundException exception)
@@ -213,33 +192,6 @@ namespace ReactionTest
 
             return null;
         }
-
-        public async Task SendEmail(string subject, string body, List<string> recipients, List<Xamarin.Essentials.EmailAttachment> attachments)
-        {
-            try
-            {
-                var message = new EmailMessage
-                {
-                    Subject = subject,
-                    Body = body,
-                    To = recipients,
-                    Attachments = attachments
-                    //Cc = ccRecipients,
-                    //Bcc = bccRecipients
-                };
-                await Email.ComposeAsync(message);
-            }
-            catch (FeatureNotSupportedException fbsEx)
-            {
-                await DisplayAlert("Not supported", "Email is not supported on this device", "Ok");
-            }
-            catch (Exception ex)
-            {
-                // Some other exception occurred
-                await DisplayAlert("Error", "Email is not supported on this device", "Ok");
-            }
-        }
-
 
     }
 }
