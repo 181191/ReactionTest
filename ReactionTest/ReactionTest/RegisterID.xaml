@@ -20,7 +20,7 @@
                 VerticalOptions="CenterAndExpand" 
                 MaxLength="5"
                 Placeholder="Enter ID here"
-                PlaceholderColor="Gray"
+                PlaceholderColor="Silver"
                 AutoSize="TextChanges"
                 IsTextPredictionEnabled="false"/>
                 
@@ -28,6 +28,8 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Text=" > "
+                BorderColor="Silver"
+                BorderWidth="1"
                 VerticalOptions="End"
                 Pressed="RegisterTestID"
                 WidthRequest="70"

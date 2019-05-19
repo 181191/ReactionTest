@@ -4,12 +4,12 @@
              x:Class="ReactionTest.StartPage"
              Title="Reactiontest">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Settings.png" Clicked="Settings_Clicked"/>
+        <ToolbarItem Icon="Settings.png" Clicked="Settings_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Image Source="hvlLogo.png"
-                   VerticalOptions="CenterAndExpand"
+                   VerticalOptions="EndAndExpand"
                    Margin="5"/>
                    
             
@@ -22,6 +22,8 @@
                 HorizontalOptions="CenterAndExpand" />
                 <Button Text="3 minutes"
                     FontSize="Large"
+                    BorderColor="Silver"
+                    BorderWidth="1"
                     
                     HorizontalOptions="CenterAndExpand"
                     Clicked="ThreeMinuteTestClicked"
@@ -30,7 +32,8 @@
 
                 <Button Text="7 minutes" 
                     FontSize="Large"
-
+                    BorderColor="Silver"
+                    BorderWidth="1"
                      
                     HorizontalOptions="CenterAndExpand"
                     Clicked="SevenMinuteTestClicked"
@@ -38,7 +41,9 @@
                     HeightRequest="70"/>
                 <Button Text="10 minutes" 
                     FontSize="Large"
-
+                    BorderColor="Silver"
+                    BorderWidth="1"
+                        
                     HorizontalOptions="CenterAndExpand"
                     Clicked="TenMinuteTestClicked"
                     WidthRequest="400"

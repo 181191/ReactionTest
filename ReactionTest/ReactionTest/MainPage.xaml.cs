@@ -319,8 +319,13 @@ namespace ReactionTest
 
         private string writeData()
         {
-            string data = userID + divideSign + System.DateTime.Now.Date.ToString("dd/MM/yyyy") + divideSign +
-                System.DateTime.Now.ToString("HH:mm:ss") + divideSign + hit + divideSign + miss + divideSign + minutes + divideSign;
+            string data = userID + divideSign + 
+                System.DateTime.Now.Date.ToString("dd/MM/yyyy") + divideSign +
+                System.DateTime.Now.ToString("HH:mm:ss") + divideSign + 
+                hit + divideSign + 
+                miss + divideSign + 
+                minutes + divideSign;
+
             foreach (double s in clicks)
             {
                 data += (s.ToString() + divideSign);

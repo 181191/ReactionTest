@@ -46,7 +46,6 @@ namespace ReactionTest
             //Find data with wanted sets:
             string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
             string textToWrite = convertToString(wantedDates);
-            //byte[] bytes = Encoding.ASCII.GetBytes(textToWrite);
             DependencyService.Get<ISaveFile>().saveFile("DataBetweenDates.csv", textToWrite);
 
         }

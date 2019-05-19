@@ -15,15 +15,15 @@
                VerticalOptions="LayoutOptions.End"
                HorizontalOptions="Center"
                Margin="0, 50, 0, 0"/>
-               
+      
         <Button Text= "{DynamicResource changeButton}"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
                 HorizontalOptions="Center"
                 Clicked= "OnButtonClicked"
                 WidthRequest="400"
-                HeightRequest="400"
-                BorderColor="Black"
-                BorderWidth="2"
+                HeightRequest="450"
+                BorderColor="Silver"
+                BorderWidth="1"
                 BackgroundColor="{DynamicResource buttonColor}}"/>
     </StackLayout>
 
