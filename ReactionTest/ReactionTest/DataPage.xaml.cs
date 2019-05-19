@@ -65,7 +65,7 @@ namespace ReactionTest
             string textToWrite = convertToString(wantedDates);
             await WriteFile(textToWrite);
             string path = await getPath("DataBetweenDates.csv");
-            await DependencyService.Get<IShare>().Show("DataBetweenDates.csv", textToWrite, path);
+            await DependencyService.Get<IShare>().Show(path);
 
         }
 

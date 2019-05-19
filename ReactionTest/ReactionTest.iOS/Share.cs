@@ -8,15 +8,15 @@ using UIKit;
 using Xamarin.Forms;
 using ReactionTest.iOS;
 
-[assembly: Dependency(typeof(SendMail_iOS))]
+[assembly: Dependency(typeof(Share))]
 namespace ReactionTest.iOS
 {
     public class Share : IShare
     {
         // MUST BE CALLED FROM THE UI THREAD
-        public async Task Show(string title, string message, string filePath)
+        public async Task Show(string filePath)
         {
-            var items = new NSObject[] { NSObject.FromObject(title), NSUrl.FromFilename(filePath) };
+            var items = new NSObject[] { NSUrl.FromFilename(filePath) };
             var activityController = new UIActivityViewController(items, null);
             var vc = GetVisibleViewController();
 
