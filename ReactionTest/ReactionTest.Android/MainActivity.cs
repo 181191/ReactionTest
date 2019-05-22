@@ -11,6 +11,7 @@ using Plugin.Permissions;
 using Android.Support.V4.Content;
 using Android.Support.V4.App;
 using Android;
+using System.Net;
 
 namespace ReactionTest.Droid
 {
@@ -22,6 +23,10 @@ namespace ReactionTest.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             UserDialogs.Init(() => this);
+
+            //ServicePointManager.ServerCertificateValidationCallback += (o, cert, chain, errors) => true;
+
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
 
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

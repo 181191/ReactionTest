@@ -16,7 +16,9 @@ using Timer = System.Timers.Timer;
 using System.IO;
 using System.Reflection;
 using PCLStorage;
-
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace ReactionTest
 {
@@ -62,6 +64,9 @@ namespace ReactionTest
 
             if (minutes > 0)
                 testTimeSec *= minutes;
+
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
 
         }
 
@@ -156,11 +161,12 @@ namespace ReactionTest
         public async void TestFinished()
         {
             //TODO: DATA MANAGEMENT TYP ASYNC METODE
-            Result result = new Result(userID, hit, miss, testTimeSec, clicks);
-            result.toDatabase();
-
             await SaveCourse();
             await ReadCourse();
+            await SendToDatabase.sendObject(userID, DateTime.Now.Date, hit, miss, testTimeSec, clicks);
+
+
+
             Device.BeginInvokeOnMainThread(() =>
             {
 

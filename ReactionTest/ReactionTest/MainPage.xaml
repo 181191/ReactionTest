@@ -11,20 +11,21 @@
 
         <Label   
                 Text="{DynamicResource changeString}"
-               FontSize="40"
+               FontSize="35"
                VerticalOptions="LayoutOptions.End"
                HorizontalOptions="Center"
                Margin="0, 50, 0, 0"/>
       
         <Button Text= "{DynamicResource changeButton}"
-                VerticalOptions="EndAndExpand"
+                VerticalOptions="End"
                 HorizontalOptions="Center"
                 Clicked= "OnButtonClicked"
-                WidthRequest="400"
-                HeightRequest="450"
-                BorderColor="Silver"
+                WidthRequest="350"
+                HeightRequest="500"
+                Margin="15"
+                BorderColor="Black"
                 BorderWidth="1"
-                BackgroundColor="{DynamicResource buttonColor}}"/>
+                BackgroundColor="{DynamicResource buttonColor}"/>
     </StackLayout>
 
 </ContentPage>

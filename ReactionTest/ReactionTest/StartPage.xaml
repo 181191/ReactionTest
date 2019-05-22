@@ -14,7 +14,7 @@
                    
             
 
-            <StackLayout VerticalOptions="CenterAndExpand">
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="5">
 
                 <Label Text="Choose test length:"
                    Scale="1.5"
