@@ -10,13 +10,13 @@ namespace ReactionTest
     static class SendToDatabase
     {
 
-        public static async Task sendObject(string userID, DateTime date, int hit, int miss, int testLength, List<double> reactionTimes)
+        public static async Task sendObject(string userID, DateTime date, int hit, int miss, int testLength, List<int> reactionTimes)
         {
             if(reactionTimes.Count < 75)
             {
                 for (int i = reactionTimes.Count-1; i < 75; i++) 
                 {
-                    reactionTimes.Add(0.0);
+                    reactionTimes.Add(0);
                 }
             }
 

@@ -27,13 +27,13 @@ namespace ReactionTest
         char divideSign = '\t';
         private bool testStarted;
         private bool buttonActive;
-        private int testTimeSec = 6;
+        private int testTimeSec = 60;
         int duration = 0;
         int testNumber = 0;
         private List<int> randoms;
         private int minutes;
         private string userID;
-        private List<double> clicks = new List<double>(75);
+        private List<int> clicks = new List<int>(75);
 
         Timer testTimer = new Timer();
 
@@ -113,7 +113,7 @@ namespace ReactionTest
         private void TestClick()
         {
             timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
-            Console.WriteLine(timeSinceActive + " ");
+            //Console.WriteLine(timeSinceActive + " ");
 
             buttonActive = false;
 
@@ -124,7 +124,7 @@ namespace ReactionTest
             else if (timeSinceActive <= 800)
             {
                 ButtonPress("Hit");
-                clicks.Add(timeSinceActive);
+                clicks.Add((int)timeSinceActive);
             }
             else
             {
@@ -164,12 +164,10 @@ namespace ReactionTest
         public async void TestFinished()
         {
             //TODO: DATA MANAGEMENT TYP ASYNC METODE
-            Console.WriteLine(clicks);
-            Console.WriteLine();
 
             await SaveCourse();
             await ReadCourse();
-            await SendToDatabase.sendObject(userID, DateTime.Now, hit, miss, minutes, clicks);
+            SendToDatabase.sendObject(userID, DateTime.Now, hit, miss, minutes, clicks);
 
             Device.BeginInvokeOnMainThread(() =>
             {
@@ -336,7 +334,7 @@ namespace ReactionTest
                 miss + divideSign + 
                 minutes + divideSign;
 
-            foreach (double s in clicks)
+            foreach (int s in clicks)
             {
                 data += (s.ToString() + divideSign);
             }
