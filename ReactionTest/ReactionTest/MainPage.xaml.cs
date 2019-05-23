@@ -1,51 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Net.Mime;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using Xamarin.Forms;
 using Timer = System.Timers.Timer;
 using System.IO;
-using System.Reflection;
 using PCLStorage;
-using System.Net.Http;
-using Newtonsoft.Json;
 using System.Net;
 
 namespace ReactionTest
 {
     public partial class MainPage : ContentPage
     {
-        char divideSign = '\t';
+        private char divideSign = '\t';
         private bool testStarted;
         private bool buttonActive;
         private int testTimeSec = 60;
-        int duration = 0;
-        int testNumber = 0;
+        private int duration = 0;
+        private int testNumber = 0;
         private List<int> randoms;
-        private int minutes;
-        private string userID;
         private List<int> clicks = new List<int>(75);
 
-        Timer testTimer = new Timer();
+        private Timer testTimer = new Timer();
+        private Stopwatch stopwatch = new Stopwatch();
 
         private int pressedWhen;
         private double timeSinceActive;
         private int activeTime = 0;
 
+        private string userID;
         private int miss;
         private int hit;
+        private int minutes;
 
-        private DateTime created;
-        private DateTime pressed;
 
 
 
@@ -76,8 +65,7 @@ namespace ReactionTest
         void OnButtonClicked(object sender, EventArgs args)
         {
 
-
-            pressed = DateTime.Now;
+            stopwatch.Stop();
             pressedWhen = duration;
 
             if (testStarted && buttonActive)
@@ -91,7 +79,6 @@ namespace ReactionTest
             else
             {
                 OnChangeButton("");
-                OnChangeValue("");
                 OnColorChangeButton(Color.LightGray);
                 InitTest();
             }
@@ -112,9 +99,8 @@ namespace ReactionTest
 
         private void TestClick()
         {
-            timeSinceActive = (pressed.Subtract(created).TotalMilliseconds);
-            //Console.WriteLine(timeSinceActive + " ");
-
+            timeSinceActive = stopwatch.ElapsedMilliseconds;
+            Console.WriteLine(timeSinceActive);
             buttonActive = false;
 
             if (timeSinceActive <= 200)
@@ -146,12 +132,13 @@ namespace ReactionTest
             {
                 activeTime++;
             }
-            if (activeTime == 3)
+            if (activeTime == 1)
             {
                 DeactivateButton();
             }
             if (duration == randoms[testNumber])
             {
+                stopwatch.Reset();
                 ActivateButton();
             }
 
@@ -224,7 +211,7 @@ namespace ReactionTest
             OnChangeValue("");
             OnColorChangeButton(Color.Red);
             OnChangeButton("");
-            created = DateTime.Now;
+            stopwatch.Start();
         }
 
         public void DeactivateButton()

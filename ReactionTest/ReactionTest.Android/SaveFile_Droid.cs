@@ -21,9 +21,22 @@ namespace ReactionTest.Droid
         public void saveFile(string fileName, string text)
         {
             string DocumentPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
-            string documentPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string filePath = Path.Combine(DocumentPath, fileName);
-            File.WriteAllText(filePath, text);
+            string documentPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath;
+            string filePath;
+            try
+            {
+                filePath = Path.Combine(DocumentPath, fileName);
+                File.WriteAllText(filePath, text);
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    filePath = Path.Combine(documentPath, fileName);
+                    File.WriteAllText(filePath, text);
+                }
+                catch (Exception) { }
+            }
         }
     }
 }
