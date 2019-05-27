@@ -33,6 +33,6 @@
     <key>CFBundleName</key>
     <string>ReactionTest</string>
     <key>XSAppIconAssets</key>
-    <string>Assets.xcassets/AppIcon.appiconset</string>
+    <string>Assets.xcassets/HVLIcon.appiconset</string>
 </dict>
 </plist>

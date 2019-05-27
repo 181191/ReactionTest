@@ -4497,6 +4497,12 @@ namespace ReactionTest.Droid
 			// aapt resource value: 0x7F010002
 			public const int hvlLogo = 2130771970;
 			
+			// aapt resource value: 0x7F010004
+			public const int icon = 2130771972;
+			
+			// aapt resource value: 0x7F010003
+			public const int Icon-36 = 2130771971;
+			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
 			
@@ -4509,8 +4515,8 @@ namespace ReactionTest.Droid
 			// aapt resource value: 0x7F090057
 			public const int ic_dialog_close_light = 2131296343;
 			
-			// aapt resource value: 0x7F010006
-			public const int ic_errorstatus = 2130771974;
+			// aapt resource value: 0x7F010008
+			public const int ic_errorstatus = 2130771976;
 			
 			// aapt resource value: 0x7F090058
 			public const int ic_group_collapse_00 = 2131296344;
@@ -5013,8 +5019,8 @@ namespace ReactionTest.Droid
 			// aapt resource value: 0x7F0900FE
 			public const int ic_mr_button_grey = 2131296510;
 			
-			// aapt resource value: 0x7F010007
-			public const int ic_successstatus = 2130771975;
+			// aapt resource value: 0x7F010009
+			public const int ic_successstatus = 2130771977;
 			
 			// aapt resource value: 0x7F0900FF
 			public const int ic_vol_type_speaker_dark = 2131296511;
@@ -5133,14 +5139,14 @@ namespace ReactionTest.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
-			// aapt resource value: 0x7F010004
-			public const int roundedbg = 2130771972;
+			// aapt resource value: 0x7F010006
+			public const int roundedbg = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int roundedbgdark = 2130771975;
 			
 			// aapt resource value: 0x7F010005
-			public const int roundedbgdark = 2130771973;
-			
-			// aapt resource value: 0x7F010003
-			public const int Settings = 2130771971;
+			public const int Settings = 2130771973;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
