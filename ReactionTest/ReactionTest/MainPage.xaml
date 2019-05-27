@@ -8,24 +8,31 @@
 
     <StackLayout >
         <!-- Place new controls here -->
-
-        <Label   
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label   
+                Grid.Row="0"
                 Text="{DynamicResource changeString}"
                FontSize="35"
                VerticalOptions="LayoutOptions.End"
-               HorizontalOptions="Center"
-               Margin="0, 50, 0, 0"/>
+               HorizontalOptions="Center"/>
       
-        <Button Text= "{DynamicResource changeButton}"
+        <Button 
+                Grid.Row="1"
+                Text= "{DynamicResource changeButton}"
                 VerticalOptions="End"
                 HorizontalOptions="Center"
-                Clicked= "OnButtonClicked"
+                Pressed="OnButtonClicked"
                 WidthRequest="350"
-                HeightRequest="500"
-                Margin="15"
+                HeightRequest="550"
+                Margin="15, 40, 15, 15"
                 BorderColor="Black"
                 BorderWidth="1"
                 BackgroundColor="{DynamicResource buttonColor}"/>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

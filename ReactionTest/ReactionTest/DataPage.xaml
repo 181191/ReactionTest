@@ -28,8 +28,7 @@
                     dd-MM-yyyy
                 </DatePicker.Format>
             </DatePicker>
-            <Button Text="Export (Android)" BorderColor="Silver" BorderWidth="1" Clicked="ExportAndroid_Clicked"/>
-            <Button Text="Export (iOS)" BorderColor="Silver" BorderWidth="1"  Clicked="ExportiOS_Clicked"/>
+            <Button Text="Export" BorderColor="Silver" BorderWidth="1" Clicked="Export_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

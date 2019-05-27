@@ -14,26 +14,25 @@ namespace ReactionTest
 {
     public partial class MainPage : ContentPage
     {
-        private char divideSign = '\t';
+        char divideSign = '\t';
         private bool testStarted;
         private bool buttonActive;
         private int testTimeSec = 60;
-        private int duration = 0;
-        private int testNumber = 0;
+        int duration = 0;
+        int testNumber = 0;
         private List<int> randoms;
+        private int minutes;
+        private string userID;
         private List<int> clicks = new List<int>(75);
 
-        private Timer testTimer = new Timer();
-        private Stopwatch stopwatch = new Stopwatch();
-
+        Timer testTimer = new Timer();
+        Stopwatch stopwatch = new Stopwatch();
         private int pressedWhen;
-        private double timeSinceActive;
+        private int timeSinceActive;
         private int activeTime = 0;
 
-        private string userID;
         private int miss;
         private int hit;
-        private int minutes;
 
 
 
@@ -58,14 +57,17 @@ namespace ReactionTest
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
 
 
-            
-            
+
+
         }
 
         void OnButtonClicked(object sender, EventArgs args)
         {
 
+
             stopwatch.Stop();
+            timeSinceActive = (int)stopwatch.ElapsedMilliseconds;
+            Console.WriteLine(timeSinceActive);
             pressedWhen = duration;
 
             if (testStarted && buttonActive)
@@ -79,9 +81,11 @@ namespace ReactionTest
             else
             {
                 OnChangeButton("");
+                OnChangeValue("");
                 OnColorChangeButton(Color.LightGray);
                 InitTest();
             }
+            stopwatch.Reset();
         }
 
         public void InitTest()
@@ -99,8 +103,6 @@ namespace ReactionTest
 
         private void TestClick()
         {
-            timeSinceActive = stopwatch.ElapsedMilliseconds;
-            Console.WriteLine(timeSinceActive);
             buttonActive = false;
 
             if (timeSinceActive <= 200)
@@ -110,7 +112,7 @@ namespace ReactionTest
             else if (timeSinceActive <= 800)
             {
                 ButtonPress("Hit");
-                clicks.Add((int)timeSinceActive);
+                clicks.Add(timeSinceActive);
             }
             else
             {
@@ -138,7 +140,6 @@ namespace ReactionTest
             }
             if (duration == randoms[testNumber])
             {
-                stopwatch.Reset();
                 ActivateButton();
             }
 
@@ -169,18 +170,20 @@ namespace ReactionTest
         {
             List<int> list = new List<int>();
             Random generator = new Random();
+            int pauseTime;
             for (int i = 0; i < testTimeSec / 8; i++)
             {
                 list.Add(i * 10 + generator.Next(1, 10));
                 if (i > 0)
                 {
-                    if (list[i] - list[i - 1] < 5)
+                    pauseTime = list[i] - list[i - 1];
+                    if (pauseTime < 5)
                     {
-                        list[i] += (5 - (list[i] - list[i - 1]));
+                        list[i] += (5 - pauseTime);
                     }
-                    if (list[i] - list[i - 1] > 10)
+                    if (pauseTime > 10)
                     {
-                        list[i] -= generator.Next(list[i] - list[i - 1] - 10, list[i] - list[i - 1] - 10 + 3);
+                        list[i] -= generator.Next(pauseTime- 10, pauseTime - 10 + 3);
                     }
                 }
 
@@ -216,6 +219,7 @@ namespace ReactionTest
 
         public void DeactivateButton()
         {
+            stopwatch.Reset();
             pressedWhen = duration;
             buttonActive = false;
             activeTime = 0;
@@ -235,7 +239,7 @@ namespace ReactionTest
 
 
                 });
-            });
+            }).ConfigureAwait(false);
         }
 
         public void OnChangeButton(string NewText)
@@ -249,7 +253,7 @@ namespace ReactionTest
 
 
                 });
-            });
+            }).ConfigureAwait(false);
         }
 
         public void OnColorChangeButton(Color color)
@@ -263,13 +267,10 @@ namespace ReactionTest
 
 
                 });
-            });
+            }).ConfigureAwait(false);
         }
 
-        protected override void OnDisappearing()
-        {
-            testTimer.Stop();
-        }
+
 
         private async Task SaveCourse()
         {
@@ -286,12 +287,12 @@ namespace ReactionTest
             }
             catch (PCLStorage.Exceptions.FileNotFoundException)
             {
-                data = await folder.CreateFileAsync("Data.csv", 
+                data = await folder.CreateFileAsync("Data.csv",
                     CreationCollisionOption.ReplaceExisting);
                 dataText = $"UserID{divideSign}Date{divideSign}Timestamp{divideSign}Hits{divideSign}Misses{divideSign}Test_length\n" + writeData();
 
             }
-            
+
 
             var bufferArray = Encoding.UTF8.GetBytes(dataText);
             using (Stream streamToWrite = await data.OpenAsync(PCLStorage.FileAccess.ReadAndWrite).ConfigureAwait(false))
@@ -314,11 +315,11 @@ namespace ReactionTest
 
         private string writeData()
         {
-            string data = userID + divideSign + 
+            string data = userID + divideSign +
                 System.DateTime.Now.Date.ToString("dd/MM/yyyy") + divideSign +
-                System.DateTime.Now.ToString("HH:mm:ss") + divideSign + 
-                hit + divideSign + 
-                miss + divideSign + 
+                System.DateTime.Now.ToString("HH:mm:ss") + divideSign +
+                hit + divideSign +
+                miss + divideSign +
                 minutes + divideSign;
 
             foreach (int s in clicks)
@@ -327,6 +328,19 @@ namespace ReactionTest
             }
             return data + "\n";
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (testStarted)
+            {
+                testTimer.Start();                
+            }
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            testTimer.Stop();
+        }
     }
 }
-

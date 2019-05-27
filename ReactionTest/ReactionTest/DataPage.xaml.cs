@@ -35,40 +35,36 @@ namespace ReactionTest
 
 
 
-        private async void ExportAndroid_Clicked(object sender, EventArgs e)
+        private async void Export_Clicked(object sender, EventArgs e)
         {
             DateTime fromDatePicked = fromDate.Date;
             DateTime toDatePicked = toDate.Date;
-
             //Whole dataset as string format:
-            string[][] dataSet = await ReadData("Data.csv");
+            try
+            {
+                string[][] dataSet = await ReadData("Data.csv");
+                string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
+                string textToWrite = convertToString(wantedDates);
 
-            //Find data with wanted sets:
-            string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
-            string textToWrite = convertToString(wantedDates);
-            DependencyService.Get<ISaveFile>().saveFile("DataBetweenDates.csv", textToWrite);
+
+                if (Device.RuntimePlatform == Device.iOS)
+                {
+                    await WriteFile(textToWrite);
+                    string path = await getPath("DataBetweenDates.csv");
+                    await DependencyService.Get<IShare>().Show(path);
+                }
+                else if (Device.RuntimePlatform == Device.Android)
+                {
+                    DependencyService.Get<ISaveFile>().saveFile("DataBetweenDates.csv", textToWrite);
+                }
+            }catch (Exception exception) {
+                System.Diagnostics.Debug.Print(exception.ToString());
+
+            }
+
+
 
         }
-
-        
-        private async void ExportiOS_Clicked(object sender, EventArgs e)
-        {
-            DateTime fromDatePicked = fromDate.Date;
-            DateTime toDatePicked = toDate.Date;
-
-            //Whole dataset as string format:
-            string[][] dataSet = await ReadData("Data.csv");
-
-            //Find data with wanted sets:
-            string[][] wantedDates = checkDates(dataSet, fromDatePicked, toDatePicked);
-            string textToWrite = convertToString(wantedDates);
-            await WriteFile(textToWrite);
-            string path = await getPath("DataBetweenDates.csv");
-            await DependencyService.Get<IShare>().Show(path);
-
-        }
-
- 
 
         private string convertToString(string[][] data)
         {
@@ -156,6 +152,12 @@ namespace ReactionTest
             {
                 System.Diagnostics.Debug.Print(exception.ToString());
                 await DisplayAlert("No tests recorded", "Could not retrieve data from file", "OK");
+            }
+            catch (PCLStorage.Exceptions.DirectoryNotFoundException exception)
+            {
+                System.Diagnostics.Debug.Print(exception.ToString());
+                await DisplayAlert("No tests recorded", "Could not retrieve data from file", "OK");
+
             }
 
             //Convert data

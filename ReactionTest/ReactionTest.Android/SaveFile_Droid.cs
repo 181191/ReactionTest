@@ -20,23 +20,43 @@ namespace ReactionTest.Droid
     {
         public void saveFile(string fileName, string text)
         {
-            string DocumentPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
-            string documentPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath;
             string filePath;
             try
             {
+                string DocumentPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
                 filePath = Path.Combine(DocumentPath, fileName);
                 File.WriteAllText(filePath, text);
+                ShowToast("File \"DataBetweenDates.csv\" saved in InternalStorage/Download...");
+
             }
-            catch (Exception)
+            catch (Exception exception)
+
             {
+                System.Diagnostics.Debug.Print(exception.ToString());
                 try
                 {
+                    string documentPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath;
                     filePath = Path.Combine(documentPath, fileName);
                     File.WriteAllText(filePath, text);
+                    ShowToast("File \"DataBetweenDates.csv\" saved in InternalStorage/Documents...");
+
                 }
-                catch (Exception) { }
+                catch (Exception exception2) {
+                    System.Diagnostics.Debug.Print(exception2.ToString());
+                }
             }
+        }
+
+        public void ShowToast(string text, bool IsLengthShort = false)
+        {
+            Handler mainHandler = new Handler(Looper.MainLooper);
+            Java.Lang.Runnable runnableToast = new Java.Lang.Runnable(() =>
+            {
+                var duration = IsLengthShort ? ToastLength.Short : ToastLength.Long;
+                Toast.MakeText(Android.App.Application.Context, text, duration).Show();
+            });
+
+            mainHandler.Post(runnableToast);
         }
     }
 }

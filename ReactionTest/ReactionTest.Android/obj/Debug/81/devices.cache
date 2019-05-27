@@ -12,4 +12,8 @@
     <ResultingAbi>arm64-v8a</ResultingAbi>
     <SdkVersion>28</SdkVersion>
   </Device>
+  <Device id="LGH93041e19dbd">
+    <ResultingAbi>arm64-v8a</ResultingAbi>
+    <SdkVersion>26</SdkVersion>
+  </Device>
 </Devices>

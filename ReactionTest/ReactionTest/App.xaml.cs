@@ -7,6 +7,7 @@ namespace ReactionTest
 {
     public partial class App : Application
     {
+        NavigationPage np = new NavigationPage(new StartPage());
         public App()
         {
             InitializeComponent();
