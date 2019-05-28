@@ -23,7 +23,7 @@ namespace ReactionTest
         private List<int> randoms;
         private int minutes;
         private string userID;
-        private List<int> clicks = new List<int>(75);
+        private List<int> clicks = new List<int>(100);
 
         Timer testTimer = new Timer();
         Stopwatch stopwatch = new Stopwatch();
@@ -53,6 +53,10 @@ namespace ReactionTest
             if (minutes > 0)
                 testTimeSec *= minutes;
 
+            TestIntervalGenerator testInterval = new TestIntervalGenerator();
+
+            randoms = testInterval.RandomizeIntervals(testTimeSec);
+
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
 
@@ -63,15 +67,13 @@ namespace ReactionTest
 
         void OnButtonClicked(object sender, EventArgs args)
         {
-
-
             stopwatch.Stop();
             timeSinceActive = (int)stopwatch.ElapsedMilliseconds;
-            Console.WriteLine(timeSinceActive);
             pressedWhen = duration;
 
             if (testStarted && buttonActive)
             {
+            Console.WriteLine(timeSinceActive);
                 TestClick();
             }
             else if (testStarted && !buttonActive)
@@ -93,7 +95,6 @@ namespace ReactionTest
             OnChangeButton("...");
             testStarted = true;
 
-            randoms = RandomizeIntervals();
 
             testTimer.Interval = 1000;
             testTimer.Start();
@@ -109,7 +110,7 @@ namespace ReactionTest
             {
                 ButtonPress("Miss");
             }
-            else if (timeSinceActive <= 800)
+            else if (timeSinceActive <= 500)
             {
                 ButtonPress("Hit");
                 clicks.Add(timeSinceActive);
@@ -166,31 +167,7 @@ namespace ReactionTest
             });
         }
 
-        private List<int> RandomizeIntervals()
-        {
-            List<int> list = new List<int>();
-            Random generator = new Random();
-            int pauseTime;
-            for (int i = 0; i < testTimeSec / 8; i++)
-            {
-                list.Add(i * 10 + generator.Next(1, 10));
-                if (i > 0)
-                {
-                    pauseTime = list[i] - list[i - 1];
-                    if (pauseTime < 5)
-                    {
-                        list[i] += (5 - pauseTime);
-                    }
-                    if (pauseTime > 10)
-                    {
-                        list[i] -= generator.Next(pauseTime- 10, pauseTime - 10 + 3);
-                    }
-                }
 
-            }
-
-            return list;
-        }
 
         public void ButtonPress(string val)
         {
@@ -230,8 +207,8 @@ namespace ReactionTest
         }
         public void OnChangeValue(string NewText)
         {
-            Task.Run(() =>
-            {
+            //Task.Run(() =>
+            //{
                 Device.BeginInvokeOnMainThread(() =>
                 {
 
@@ -239,13 +216,13 @@ namespace ReactionTest
 
 
                 });
-            }).ConfigureAwait(false);
+            //}).ConfigureAwait(false);
         }
 
         public void OnChangeButton(string NewText)
         {
-            Task.Run(() =>
-            {
+            //Task.Run(() =>
+            //{
                 Device.BeginInvokeOnMainThread(() =>
                 {
 
@@ -253,13 +230,13 @@ namespace ReactionTest
 
 
                 });
-            }).ConfigureAwait(false);
+            //}).ConfigureAwait(false);
         }
 
         public void OnColorChangeButton(Color color)
         {
-            Task.Run(() =>
-            {
+            //Task.Run(() =>
+            //{
                 Device.BeginInvokeOnMainThread(() =>
                 {
 
@@ -267,7 +244,7 @@ namespace ReactionTest
 
 
                 });
-            }).ConfigureAwait(false);
+            //}).ConfigureAwait(false);
         }
 
 
@@ -334,13 +311,15 @@ namespace ReactionTest
             base.OnAppearing();
             if (testStarted)
             {
-                testTimer.Start();                
+                DisplayAlert("Test was depricated", "the application was not in focus, therefor the test has been canceled", "OK");
+                Device.BeginInvokeOnMainThread(() => Navigation.PopAsync());
             }
         }
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             testTimer.Stop();
+            stopwatch.Stop();
         }
     }
 }

@@ -91,8 +91,33 @@ namespace ReactionTest
         public int t73 { get; set; }
         public int t74 { get; set; }
         public int t75 { get; set; }
+        public int t76 { get; set; }
+        public int t77 { get; set; }
+        public int t78 { get; set; }
+        public int t79 { get; set; }
+        public int t80 { get; set; }
+        public int t81 { get; set; }
+        public int t82 { get; set; }
+        public int t83 { get; set; }
+        public int t84 { get; set; }
+        public int t85 { get; set; }
+        public int t86 { get; set; }
+        public int t87 { get; set; }
+        public int t88 { get; set; }
+        public int t89 { get; set; }
+        public int t90 { get; set; }
+        public int t91 { get; set; }
+        public int t92 { get; set; }
+        public int t93 { get; set; }
+        public int t94 { get; set; }
+        public int t95 { get; set; }
+        public int t96 { get; set; }
+        public int t97 { get; set; }
+        public int t98 { get; set; }
+        public int t99 { get; set; }
+        public int t100 { get; set; }
 
-        public Post(string userID, DateTime date, int hit, int miss, int testLength, int t1, int t2, int t3, int t4, int t5, int t6, int t7, int t8, int t9, int t10, int t11, int t12, int t13, int t14, int t15, int t16, int t17, int t18, int t19, int t20, int t21, int t22, int t23, int t24, int t25, int t26, int t27, int t28, int t29, int t30, int t31, int t32, int t33, int t34, int t35, int t36, int t37, int t38, int t39, int t40, int t41, int t42, int t43, int t44, int t45, int t46, int t47, int t48, int t49, int t50, int t51, int t52, int t53, int t54, int t55, int t56, int t57, int t58, int t59, int t60, int t61, int t62, int t63, int t64, int t65, int t66, int t67, int t68, int t69, int t70, int t71, int t72, int t73, int t74, int t75)
+        public Post(string userID, DateTime date, int hit, int miss, int testLength, int t1, int t2, int t3, int t4, int t5, int t6, int t7, int t8, int t9, int t10, int t11, int t12, int t13, int t14, int t15, int t16, int t17, int t18, int t19, int t20, int t21, int t22, int t23, int t24, int t25, int t26, int t27, int t28, int t29, int t30, int t31, int t32, int t33, int t34, int t35, int t36, int t37, int t38, int t39, int t40, int t41, int t42, int t43, int t44, int t45, int t46, int t47, int t48, int t49, int t50, int t51, int t52, int t53, int t54, int t55, int t56, int t57, int t58, int t59, int t60, int t61, int t62, int t63, int t64, int t65, int t66, int t67, int t68, int t69, int t70, int t71, int t72, int t73, int t74, int t75, int t76, int t77, int t78, int t79, int t80, int t81, int t82, int t83, int t84, int t85, int t86, int t87, int t88, int t89, int t90, int t91, int t92, int t93, int t94, int t95, int t96, int t97, int t98, int t99, int t100)
         {
             this.UserID = userID;
             this.date = date;
@@ -174,6 +199,31 @@ namespace ReactionTest
             this.t73 = t73;
             this.t74 = t74;
             this.t75 = t75;
+            this.t76 = t76;
+            this.t77 = t77;
+            this.t78 = t78;
+            this.t79 = t79;
+            this.t80 = t80;
+            this.t81 = t81;
+            this.t82 = t82;
+            this.t83 = t83;
+            this.t84 = t84;
+            this.t85 = t85;
+            this.t86 = t86;
+            this.t87 = t87;
+            this.t88 = t88;
+            this.t89 = t89;
+            this.t90 = t90;
+            this.t91 = t91;
+            this.t92 = t92;
+            this.t93 = t93;
+            this.t94 = t94;
+            this.t95 = t95;
+            this.t96 = t96;
+            this.t97 = t97;
+            this.t98 = t98;
+            this.t99 = t99;
+            this.t100 = t100;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

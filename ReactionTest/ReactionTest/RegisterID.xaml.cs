@@ -32,9 +32,12 @@ namespace ReactionTest
             if (ID.Text != null)
             {
                 testID = ID.Text;
-                Page mPage = new MainPage(testLenght, testID);
-                mPage.Title = testID;
+                Page mPage = new MainPage(testLenght, testID) {
+                    Title = testID
+                };
+
                 Navigation.PushAsync(mPage);
+                Navigation.RemovePage(this);
             }
             else
                 DisplayAlert("No input", "UserID can't be empty", "OK");
