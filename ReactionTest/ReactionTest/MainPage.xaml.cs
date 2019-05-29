@@ -83,7 +83,6 @@ namespace ReactionTest
             else
             {
                 OnChangeButton("");
-                OnChangeValue("");
                 OnColorChangeButton(Color.LightGray);
                 InitTest();
             }
