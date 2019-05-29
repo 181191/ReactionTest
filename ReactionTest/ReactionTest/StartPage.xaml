@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReactionTest.StartPage"
-             Title="Reactiontest">
+             Title="PVT">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Settings.png" Clicked="Settings_Clicked" />
     </ContentPage.ToolbarItems>

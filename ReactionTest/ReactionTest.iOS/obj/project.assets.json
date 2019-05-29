@@ -1302,11 +1302,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
       "projectName": "ReactionTest.iOS",
-      "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
+      "projectPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\ReactionTest.iOS.csproj",
       "packagesPath": "C:\\Users\\ommid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\obj\\",
+      "outputPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1330,8 +1330,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
-              "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
+            "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
+              "projectPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
             }
           }
         }

@@ -11,7 +11,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ReactionTest.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>ReactionTest.iOS</AssemblyName>
+    <AssemblyName>PVT</AssemblyName>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>

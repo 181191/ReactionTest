@@ -30,4 +30,9 @@
       </intent-filter>
     </receiver>
   </application>
-</manifest>
+  #if DEBUG
+  [assembly: Application(Debuggable=true)]
+  #else
+  [assembly: Application(Debuggable=false)]
+  #endif
+  </manifest>

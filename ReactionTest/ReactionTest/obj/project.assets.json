@@ -853,11 +853,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
+      "projectUniqueName": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
       "projectName": "ReactionTest",
-      "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
+      "projectPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj",
       "packagesPath": "C:\\Users\\ommid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\obj\\",
+      "outputPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -110,7 +110,7 @@ namespace ReactionTest
             {
                 ButtonPress("Miss");
             }
-            else if (timeSinceActive <= 500)
+            else if (timeSinceActive <= 800)
             {
                 ButtonPress("Hit");
                 clicks.Add(timeSinceActive);
