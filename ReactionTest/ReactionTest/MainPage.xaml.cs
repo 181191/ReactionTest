@@ -43,6 +43,7 @@ namespace ReactionTest
         public MainPage(int minutes, string userID)
         {
             InitializeComponent();
+            PopUpInstructions();
             this.minutes = minutes;
             this.userID = userID;
 
@@ -104,6 +105,7 @@ namespace ReactionTest
         private void TestClick()
         {
             buttonActive = false;
+            clicks.Add(timeSinceActive);
 
             if (timeSinceActive <= 200)
             {
@@ -112,7 +114,6 @@ namespace ReactionTest
             else if (timeSinceActive <= 800)
             {
                 ButtonPress("Hit");
-                clicks.Add(timeSinceActive);
             }
             else
             {
@@ -305,12 +306,17 @@ namespace ReactionTest
             return data + "\n";
         }
 
+        protected void PopUpInstructions()
+        {
+            Application.Current.MainPage.DisplayAlert("Instructions", "Wait while the button is Grey.\nPress it as fast as you can when it turns Red.", "Understood");
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             if (testStarted)
             {
-                DisplayAlert("Test was depricated", "the application was not in focus, therefor the test has been canceled", "OK");
+                Application.Current.MainPage.DisplayAlert("Test was depricated", "the application was not in focus, therefor the test has been canceled", "OK");
                 Device.BeginInvokeOnMainThread(() => Navigation.PopAsync());
             }
         }

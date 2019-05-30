@@ -1360,11 +1360,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
+      "projectUniqueName": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
       "projectName": "ReactionTest.Android",
-      "projectPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
+      "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\ReactionTest.Android.csproj",
       "packagesPath": "C:\\Users\\ommid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\obj\\",
+      "outputPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1388,8 +1388,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
-              "projectPath": "C:\\Users\\ommid\\source\\repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
+            "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj": {
+              "projectPath": "C:\\Users\\ommid\\Source\\Repos\\181191\\ReactionTest\\ReactionTest\\ReactionTest\\ReactionTest.csproj"
             }
           }
         }
