@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReactionTest.RegisterID">
     <ContentPage.Content>
-        <StackLayout Padding="5,10">
+        <ScrollView>
+            <StackLayout Padding="5,10">
             <Label Text="Subject ID: "
                 Scale="2.0"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
             <Grid VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -23,8 +25,8 @@
                 PlaceholderColor="Silver"
                 AutoSize="TextChanges"
                 IsTextPredictionEnabled="false"/>
-                
-            <Button 
+
+                <Button 
                 Grid.Row="0"
                 Grid.Column="1"
                 Text=" > "
@@ -34,9 +36,9 @@
                 Pressed="RegisterTestID"
                 WidthRequest="70"
                 HeightRequest="50"/>
-                
+
             </Grid>
-            
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
